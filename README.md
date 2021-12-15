@@ -1,4 +1,4 @@
-# avent-of-code-2021
+# Avent of Code 2021
 
 This is where I share my [Avent of Code](https://adventofcode.com)'s solution 😃
 
