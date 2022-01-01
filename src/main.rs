@@ -1,8 +1,10 @@
 mod day1;
 mod day2;
+mod day3;
 
 use anyhow::Context;
 use humantime::format_duration;
+use owo_colors::OwoColorize;
 use std::{
     error::Error,
     fs::File,
@@ -26,14 +28,16 @@ pub trait Avent {
 
 struct Solution {
     event: Box<dyn Avent>,
+    time: Duration,
 }
 
 impl Solution {
     fn new<Event: Avent + 'static>(content: Vec<String>) -> Self {
-        let event = Event::new(content);
+        let (event, time) = get_time(|| Event::new(content));
 
         Solution {
             event: Box::new(event),
+            time,
         }
     }
 
@@ -42,8 +46,20 @@ impl Solution {
         let (part2, time2) = get_time(|| self.event.part2());
 
         println!("Solution for day {}", day);
-        println!("part 1: {}, time: {}", part1, format_duration(time1));
-        println!("part 2: {}, time: {}", part2, format_duration(time2));
+        println!(
+            "Collect data in {}",
+            format_duration(self.time).fg_rgb::<255, 63, 128>()
+        );
+        println!(
+            "part 1: {} in {}",
+            part1.fg_rgb::<100, 252, 218>(),
+            format_duration(time1).fg_rgb::<100, 252, 218>()
+        );
+        println!(
+            "part 2: {} in {}",
+            part2.fg_rgb::<100, 252, 218>(),
+            format_duration(time2).fg_rgb::<100, 252, 218>()
+        );
     }
 }
 
@@ -64,6 +80,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let solution = match day {
         1 => Solution::new::<day1::SonarSweep>(content),
         2 => Solution::new::<day2::Dive>(content),
+        3 => Solution::new::<day3::BinaryDiagnostic>(content),
         _ => unreachable!(),
     };
 
