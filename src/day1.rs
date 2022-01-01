@@ -5,12 +5,16 @@ pub struct SonarSweep {
 impl crate::Avent for SonarSweep {
     fn new(data: Vec<String>) -> Self {
         SonarSweep {
-            data: data.into_iter().flat_map(|l| l.parse()).collect(),
+            data: data.iter().filter_map(|l| l.parse().ok()).collect(),
         }
     }
 
     fn part1(&self) -> usize {
-        self.data.windows(2).filter(|d| d[0] < d[1]).count()
+        self.data
+            .iter()
+            .zip(self.data.iter().skip(1))
+            .filter(|(a, b)| a < b)
+            .count()
     }
 
     fn part2(&self) -> usize {

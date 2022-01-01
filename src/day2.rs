@@ -1,23 +1,33 @@
-struct Data {
-    direction: String,
+enum Direction {
+    Down,
+    Forward,
+    Up,
+}
+
+struct Command {
+    direction: Direction,
     count: usize,
 }
 
 pub struct Dive {
-    data: Vec<Data>,
+    data: Vec<Command>,
 }
 
 impl crate::Avent for Dive {
     fn new(data: Vec<String>) -> Dive {
-        let data: Vec<Data> = data
-            .into_iter()
+        let data: Vec<Command> = data
+            .iter()
             .map(|d| {
-                let s: Vec<&str> = d.split_whitespace().collect();
+                let mut cmd_iter = d.split_whitespace();
 
-                Data {
-                    direction: s[0].to_string(),
-                    count: s[1].parse().unwrap(),
-                }
+                let direction = match cmd_iter.next().unwrap() {
+                    "forward" => Direction::Forward,
+                    "up" => Direction::Up,
+                    _ => Direction::Down,
+                };
+                let count = cmd_iter.next().unwrap().parse().unwrap();
+
+                Command { direction, count }
             })
             .collect();
 
@@ -28,10 +38,10 @@ impl crate::Avent for Dive {
         let mut horziontal = 0;
         let mut depth = 0;
 
-        self.data.iter().for_each(|d| match d.direction.as_str() {
-            "forward" => horziontal += d.count,
-            "down" => depth += d.count,
-            _ => depth -= d.count,
+        self.data.iter().for_each(|c| match c.direction {
+            Direction::Forward => horziontal += c.count,
+            Direction::Down => depth += c.count,
+            Direction::Up => depth -= c.count,
         });
 
         horziontal * depth
@@ -42,13 +52,13 @@ impl crate::Avent for Dive {
         let mut depth = 0;
         let mut aim = 0;
 
-        self.data.iter().for_each(|d| match d.direction.as_str() {
-            "forward" => {
-                horziontal += d.count;
-                depth += aim * d.count;
+        self.data.iter().for_each(|c| match c.direction {
+            Direction::Forward => {
+                horziontal += c.count;
+                depth += aim * c.count;
             }
-            "down" => aim += d.count,
-            _ => aim -= d.count,
+            Direction::Down => aim += c.count,
+            Direction::Up => aim -= c.count,
         });
 
         horziontal * depth
