@@ -1,3 +1,5 @@
+use crate::utils;
+
 enum Direction {
     Down,
     Forward,
@@ -13,7 +15,7 @@ pub struct Dive {
     data: Vec<Command>,
 }
 
-impl crate::Avent for Dive {
+impl utils::Avent for Dive {
     fn new(data: Vec<String>) -> Dive {
         let data: Vec<Command> = data
             .iter()

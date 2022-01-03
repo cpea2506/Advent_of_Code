@@ -1,11 +1,16 @@
+use crate::utils;
+
 pub struct BinaryDiagnostic {
     data: Vec<Vec<u8>>,
 }
 
-impl crate::Avent for BinaryDiagnostic {
+impl utils::Avent for BinaryDiagnostic {
     fn new(data: Vec<String>) -> Self {
         BinaryDiagnostic {
-            data: data.iter().map(|l| l.bytes().map(|b| b - 48).collect()).collect(),
+            data: data
+                .iter()
+                .map(|l| l.bytes().map(|b| b - 48).collect())
+                .collect(),
         }
     }
 
@@ -29,7 +34,6 @@ impl crate::Avent for BinaryDiagnostic {
             gamma |= bit * pow2;
             epsilon |= (1 ^ bit) * pow2;
         }
-
 
         gamma * epsilon
     }

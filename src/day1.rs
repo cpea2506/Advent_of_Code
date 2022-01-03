@@ -1,8 +1,10 @@
+use crate::utils;
+
 pub struct SonarSweep {
     data: Vec<usize>,
 }
 
-impl crate::Avent for SonarSweep {
+impl utils::Avent for SonarSweep {
     fn new(data: Vec<String>) -> Self {
         SonarSweep {
             data: data.iter().filter_map(|l| l.parse().ok()).collect(),
