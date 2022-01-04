@@ -60,17 +60,16 @@ impl utils::Avent for BinaryDiagnostic {
             let mut current_index = 0;
 
             while indexes.len() > 1 {
-                let mut bit: u32 = 0;
+                let mut sum: u32 = 0;
 
                 indexes.iter().for_each(|&i| {
                     if self.data[i][current_index] > 0 {
-                        bit += 1
+                        sum += 1
                     }
                 });
 
-                bit /= (indexes.len() - (indexes.len() >> 1)) as u32;
-
-                let bit = ((bit > 0) ^ !common) as u8;
+                let check_bit = sum / (indexes.len() - (indexes.len() >> 1)) as u32;
+                let bit = ((check_bit > 0) ^ !common) as u8;
 
                 indexes.retain(|&i| self.data[i][current_index] == bit);
 
