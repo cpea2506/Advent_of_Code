@@ -8,7 +8,7 @@ enum Direction {
 
 struct Command {
     direction: Direction,
-    count: usize,
+    count: u32,
 }
 
 pub struct Dive {
@@ -36,7 +36,7 @@ impl utils::Avent for Dive {
         Dive { data }
     }
 
-    fn part1(&self) -> usize {
+    fn part1(&self) -> u32 {
         let mut horziontal = 0;
         let mut depth = 0;
 
@@ -49,7 +49,7 @@ impl utils::Avent for Dive {
         horziontal * depth
     }
 
-    fn part2(&self) -> usize {
+    fn part2(&self) -> u32 {
         let mut horziontal = 0;
         let mut depth = 0;
         let mut aim = 0;

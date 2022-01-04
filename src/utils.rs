@@ -11,8 +11,8 @@ pub trait Avent {
     fn new(data: Vec<String>) -> Self
     where
         Self: Sized;
-    fn part1(&self) -> usize;
-    fn part2(&self) -> usize;
+    fn part1(&self) -> u32;
+    fn part2(&self) -> u32;
 }
 
 pub struct Solution {

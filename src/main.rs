@@ -15,7 +15,7 @@ struct Cli {
 
 fn main() -> Result<(), Box<dyn Error>> {
     let day = Cli::from_args().day;
-    let filename = format!("input/day{}.txt", day);
+    let filename = format!("src/day{}/input.txt", day);
     let content: Vec<String> = utils::read_lines(filename)
         .with_context(|| format!("could not read input file for day {}", day))?;
 

@@ -1,7 +1,7 @@
 use crate::utils;
 
 pub struct SonarSweep {
-    data: Vec<usize>,
+    data: Vec<u32>,
 }
 
 impl utils::Avent for SonarSweep {
@@ -11,19 +11,19 @@ impl utils::Avent for SonarSweep {
         }
     }
 
-    fn part1(&self) -> usize {
+    fn part1(&self) -> u32 {
         self.data
             .iter()
             .zip(self.data.iter().skip(1))
             .filter(|(a, b)| a < b)
-            .count()
+            .count() as u32
     }
 
-    fn part2(&self) -> usize {
+    fn part2(&self) -> u32 {
         self.data
             .windows(3)
             .zip(self.data.windows(3).skip(1))
-            .filter(|(a, b)| a.iter().sum::<usize>() < b.iter().sum())
-            .count()
+            .filter(|(a, b)| a.iter().sum::<u32>() < b.iter().sum())
+            .count() as u32
     }
 }
