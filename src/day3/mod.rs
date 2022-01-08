@@ -10,8 +10,10 @@ impl Binary for u32 {
     }
 }
 
+type Bin = Vec<u8>;
+
 pub struct BinaryDiagnostic {
-    data: Vec<Vec<u8>>,
+    data: Vec<Bin>,
 }
 
 impl utils::Avent for BinaryDiagnostic {
@@ -19,7 +21,7 @@ impl utils::Avent for BinaryDiagnostic {
         BinaryDiagnostic {
             data: data
                 .iter()
-                .map(|l| l.bytes().map(|b| b - 48).collect::<Vec<u8>>())
+                .map(|l| l.bytes().map(|b| b - 48).collect::<Bin>())
                 .collect(),
         }
     }
