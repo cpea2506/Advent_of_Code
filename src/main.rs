@@ -13,7 +13,7 @@ use utils::Solution;
 struct Cli {
     day: u32,
 
-    #[structopt(short, long, help = "Use example file provided by AOC")]
+    #[structopt(short, long, help = "Uses example file provided by AOC")]
     example: bool,
 }
 

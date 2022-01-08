@@ -12,22 +12,22 @@ Language:
 cargo run -- <day>
 
 <day>: specify day's number
+
+Flags: 
+    -e, --example: Uses example file provided by AOC
 ```
 
-For example: `cargo run -- 1` to see solution for day 1
+For example: 
+
+- `cargo run -- 1` to see solution for day 1
+- `cargo run -- 1 --example (or -e)` to see solution for day 1 with example file
 
 ## Some note
 
-### Day1 
+- **Day1**: Everything looks good. Just need to use `window` and `zip` to get slice.
 
-- Everything looks good. Just need to use `window` and `zip` to get slice.
+- **Day2**: Fastest as this time, most of the time used to get data. Use `Direction` enum instead of `&str` to avoid conversion. This makes increase speed so much. Wow!
 
-### Day2 
+- **Day3**: I still don't know why everything works well. It took me nearly two weeks of relaxing before facing this again. Working with `Binary` and `String` was an interesting and also a terrible experience. 
 
-- Fastest as this time, most of the time used to get data. 
-- Use `Direction` enum instead of `&str` to avoid conversion. This makes increase speed so much. Wow!
-
-### Day3
-
-- I still don't know why everything works well. It took me nearly two weeks of relaxing before facing this again. 
-- Working with `Binary` and `String` was an interesting and also a terrible experience. 
+- **Day4**: All of mess
