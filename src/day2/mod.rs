@@ -1,5 +1,3 @@
-use crate::utils;
-
 enum Direction {
     Down,
     Forward,
@@ -8,53 +6,52 @@ enum Direction {
 
 struct Command {
     direction: Direction,
-    count: u32,
+    count: usize,
 }
 
 pub struct Dive {
-    data: Vec<Command>,
+    commands: Vec<Command>,
 }
 
-impl utils::Avent for Dive {
-    fn new(data: Vec<String>) -> Dive {
+impl crate::Avent for Dive {
+    fn new(data: &str) -> Dive {
         let data: Vec<Command> = data
-            .iter()
+            .lines()
             .map(|d| {
                 let mut cmd_iter = d.split_whitespace();
-
                 let direction = match cmd_iter.next().unwrap() {
                     "forward" => Direction::Forward,
                     "up" => Direction::Up,
                     _ => Direction::Down,
                 };
-                let count = cmd_iter.next().unwrap().parse().unwrap();
+                let count = cmd_iter.next().unwrap().parse::<usize>().unwrap();
 
                 Command { direction, count }
             })
             .collect();
 
-        Dive { data }
+        Dive { commands: data }
     }
 
-    fn part1(&self) -> u32 {
-        let mut horziontal = 0;
-        let mut depth = 0;
+    fn part1(&self) -> usize {
+        let mut horziontal: usize = 0;
+        let mut depth: usize = 0;
 
-        self.data.iter().for_each(|c| match c.direction {
+        self.commands.iter().for_each(|c| match c.direction {
             Direction::Forward => horziontal += c.count,
             Direction::Down => depth += c.count,
             Direction::Up => depth -= c.count,
         });
 
-        horziontal * depth
+        (horziontal * depth) as usize
     }
 
-    fn part2(&self) -> u32 {
+    fn part2(&self) -> usize {
         let mut horziontal = 0;
         let mut depth = 0;
         let mut aim = 0;
 
-        self.data.iter().for_each(|c| match c.direction {
+        self.commands.iter().for_each(|c| match c.direction {
             Direction::Forward => {
                 horziontal += c.count;
                 depth += aim * c.count;
@@ -63,6 +60,6 @@ impl utils::Avent for Dive {
             Direction::Up => aim -= c.count,
         });
 
-        horziontal * depth
+        (horziontal * depth) as usize
     }
 }

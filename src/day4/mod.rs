@@ -1,5 +1,3 @@
-use crate::utils;
-
 type Board = [u8; 25];
 
 pub struct GiantSquid {
@@ -7,9 +5,9 @@ pub struct GiantSquid {
     boards: Vec<Board>,
 }
 
-impl utils::Avent for GiantSquid {
-    fn new(data: Vec<String>) -> Self {
-        let mut iter = data.iter();
+impl crate::Avent for GiantSquid {
+    fn new(data: &str) -> Self {
+        let mut iter = data.lines();
 
         let draw_numbers: Vec<u8> = iter
             .next()
@@ -38,7 +36,7 @@ impl utils::Avent for GiantSquid {
         }
     }
 
-    fn part1(&self) -> u32 {
+    fn part1(&self) -> usize {
         let (board, last_draw_index) = self
             .boards
             .iter()
@@ -49,7 +47,7 @@ impl utils::Avent for GiantSquid {
         winning_score(board, &self.draw_nums, last_draw_index)
     }
 
-    fn part2(&self) -> u32 {
+    fn part2(&self) -> usize {
         let (board, last_draw_index) = self
             .boards
             .iter()
@@ -61,16 +59,16 @@ impl utils::Avent for GiantSquid {
     }
 }
 
-fn winning_score(board: Board, draw_numbers: &[u8], last_draw_index: Option<usize>) -> u32 {
+fn winning_score(board: Board, draw_nums: &[u8], last_draw_index: Option<usize>) -> usize {
     if let Some(index) = last_draw_index {
-        let draw_numbers = draw_numbers.get(..=index).unwrap();
+        let draw_numbers = draw_nums.get(..=index).unwrap();
         let unmarked_sum = board
             .iter()
             .filter(|v| !draw_numbers.contains(v))
-            .map(|&v| v as u32)
-            .sum::<u32>();
+            .map(|&v| v as usize)
+            .sum::<usize>();
 
-        draw_numbers[index] as u32 * unmarked_sum
+        draw_numbers[index] as usize * unmarked_sum
     } else {
         0
     }
