@@ -5,6 +5,7 @@ mod day4;
 mod day5;
 mod day6;
 mod day7;
+mod day8;
 
 use anyhow::Context;
 use humantime::format_duration;
@@ -84,6 +85,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         5 => Solution::new::<day5::HydrothermalVenture>(content),
         6 => Solution::new::<day6::Lanternfish>(content),
         7 => Solution::new::<day7::Whales>(content),
+        8 => Solution::new::<day8::SevenSegment>(content),
         _ => unreachable!(),
     };
     solution.get_result(cli.day);
