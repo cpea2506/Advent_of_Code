@@ -18,9 +18,9 @@ impl crate::Avent for SevenSegment {
         let digit_instances = data
             .lines()
             .map(|l| {
-                let mut entry_iter = l.split(" | ").map(|s| s.to_string());
-                let patterns = entry_iter.next().unwrap();
-                let output = entry_iter.next().unwrap();
+                let mut iter = l.split(" | ").map(|s| s.to_string());
+                let patterns = iter.next().unwrap();
+                let output = iter.next().unwrap();
 
                 Entry { patterns, output }
             })

@@ -31,3 +31,9 @@ For example:
 - **Day3**: I still don't know why everything works well. It took me nearly two weeks of relaxing before facing this again. Working with `Binary` and `String` was an interesting and also a terrible experience. 
 
 - **Day4**: All of mess
+
+- **Day5**: 1000_0000 field... So slowwwwwwwwwwww
+
+- **Day6**: I'm very confident about the first implement and my terminal nearly stop working as part2 start.
+
+- **Day7**: A lot of Math stuff (nah, i don't know why they are very good at Math). It's fast as f*ck.
