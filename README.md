@@ -11,7 +11,7 @@ Language:
 ```
 cargo run -- <day>
 
-<day>: specify day's number
+<day>: specific day's number
 
 Flags: 
     -e, --example: Uses example file provided by AOC
