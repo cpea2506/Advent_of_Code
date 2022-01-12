@@ -32,8 +32,8 @@ For example:
 
 - **Day4**: All of mess
 
-- **Day5**: 1000_0000 field... So slowwwwwwwwwwww
+- **Day5**: 1000_000 fields... So slowwwwwwwwwwww
 
-- **Day6**: I'm very confident about the first implement and my terminal nearly stop working as part2 start.
+- **Day6**: I'm very confident about the first implement and my terminal nearly stop working as part2 starts.
 
-- **Day7**: A lot of Math stuff (nah, i don't know why they are very good at Math). It's fast as f*ck.
+- **Day7**: A lot of Math stuffs (nah, i don't know why they are very good at Math). It's fast as f*ck.
