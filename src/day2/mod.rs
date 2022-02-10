@@ -15,7 +15,7 @@ pub struct Dive {
 
 impl crate::Avent for Dive {
     fn new(data: &str) -> Dive {
-        let data: Vec<Command> = data
+        let commands: Vec<Command> = data
             .lines()
             .map(|d| {
                 let mut cmd_iter = d.split_whitespace();
@@ -30,7 +30,7 @@ impl crate::Avent for Dive {
             })
             .collect();
 
-        Dive { commands: data }
+        Dive { commands }
     }
 
     fn part1(&self) -> usize {

@@ -1,4 +1,5 @@
 pub struct Entry {
+    #[allow(unused)]
     patterns: String,
     output: String,
 }
@@ -11,11 +12,15 @@ impl SevenSegment {
     fn is_unique(s: &str) -> bool {
         matches!(s.len(), 2 | 3 | 4 | 7)
     }
+
+    fn decode(_patterns: &str) -> usize {
+        0
+    }
 }
 
 impl crate::Avent for SevenSegment {
     fn new(data: &str) -> Self {
-        let digit_instances = data
+        let entries = data
             .lines()
             .map(|l| {
                 let mut iter = l.split(" | ").map(|s| s.to_string());
@@ -26,9 +31,7 @@ impl crate::Avent for SevenSegment {
             })
             .collect();
 
-        SevenSegment {
-            entries: digit_instances,
-        }
+        SevenSegment { entries }
     }
 
     fn part1(&self) -> usize {
@@ -41,6 +44,12 @@ impl crate::Avent for SevenSegment {
     }
 
     fn part2(&self) -> usize {
+        let _ = self
+            .entries
+            .iter()
+            .map(|e| Self::decode(&e.output))
+            .sum::<usize>();
+
         0
     }
 }

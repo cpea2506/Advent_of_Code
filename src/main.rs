@@ -6,6 +6,7 @@ mod day5;
 mod day6;
 mod day7;
 mod day8;
+mod day9;
 
 use anyhow::Context;
 use humantime::format_duration;
@@ -68,16 +69,16 @@ struct Cli {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let cli = Cli::from_args();
+    let args = Cli::from_args();
 
-    let main_file = if cli.example { "example" } else { "input" };
-    let filename = format!("src/day{}/{}.txt", cli.day, main_file);
+    let main_file = if args.example { "example" } else { "input" };
+    let filename = format!("src/day{}/{}.txt", args.day, main_file);
 
     let mut content: &str = &fs::read_to_string(filename)
-        .with_context(|| format!("could not read {} file for day {}", main_file, cli.day))?;
+        .with_context(|| format!("could not read {} file for day {}", main_file, args.day))?;
     content = content.trim();
 
-    let solution = match cli.day {
+    let solution = match args.day {
         1 => Solution::new::<day1::SonarSweep>(content),
         2 => Solution::new::<day2::Dive>(content),
         3 => Solution::new::<day3::BinaryDiagnostic>(content),
@@ -86,9 +87,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         6 => Solution::new::<day6::Lanternfish>(content),
         7 => Solution::new::<day7::Whales>(content),
         8 => Solution::new::<day8::SevenSegment>(content),
+        9 => Solution::new::<day9::SmokeBasin>(content),
         _ => unreachable!(),
     };
-    solution.get_result(cli.day);
+    solution.get_result(args.day);
 
     Ok(())
 }
