@@ -9,7 +9,7 @@ Language:
 ## Usage:
 
 ```
-cargo run -- <day>
+cargo run --release <day>
 
 <day>: specific day's number
 
