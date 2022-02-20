@@ -19,8 +19,8 @@ Flags:
 
 For example: 
 
-- `cargo run -- 1` to see solution for day 1
-- `cargo run -- 1 --example (or -e)` to see solution for day 1 with example file
+- `cargo run --release 1` to see solution for day 1
+- `cargo run --release 1 --example (or -e)` to see solution for day 1 with example file
 
 ## Some note
 
