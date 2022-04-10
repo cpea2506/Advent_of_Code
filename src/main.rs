@@ -1,4 +1,4 @@
-use avent::Solutions;
+use avent::get_solution;
 use std::error::Error;
 use structopt::StructOpt;
 
@@ -19,9 +19,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     let main_file = if args.example { "example" } else { "input" };
 
     if args.all {
-        (1..=9).for_each(|d| Solutions::get_result(main_file, d));
+        (1..=9).for_each(|d| get_solution(main_file, d));
     } else {
-        Solutions::get_result(main_file, args.day);
+        get_solution(main_file, args.day);
     }
 
     Ok(())

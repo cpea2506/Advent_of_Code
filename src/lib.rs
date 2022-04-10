@@ -66,30 +66,26 @@ impl Solution {
     }
 }
 
-pub struct Solutions;
+pub fn get_solution(main_file: &str, day: u8) {
+    let filename = format!("src/day{}/{}.txt", day, main_file);
+    let content = &fs::read_to_string(&filename)
+        .with_context(|| format!("could not read {} file for day {}", main_file, day))
+        .unwrap();
 
-impl Solutions {
-    pub fn get_result(main_file: &str, day: u8) {
-        let filename = format!("src/day{}/{}.txt", day, main_file);
-        let content = &fs::read_to_string(&filename)
-            .with_context(|| format!("could not read {} file for day {}", main_file, day))
-            .unwrap();
+    let solution = match day {
+        1 => Solution::new::<day1::SonarSweep>(content),
+        2 => Solution::new::<day2::Dive>(content),
+        3 => Solution::new::<day3::BinaryDiagnostic>(content),
+        4 => Solution::new::<day4::GiantSquid>(content),
+        5 => Solution::new::<day5::HydrothermalVenture>(content),
+        6 => Solution::new::<day6::Lanternfish>(content),
+        7 => Solution::new::<day7::Whales>(content),
+        8 => Solution::new::<day8::SevenSegment>(content),
+        9 => Solution::new::<day9::SmokeBasin>(content),
+        _ => unreachable!(),
+    };
 
-        let solution = match day {
-            1 => Solution::new::<day1::SonarSweep>(content),
-            2 => Solution::new::<day2::Dive>(content),
-            3 => Solution::new::<day3::BinaryDiagnostic>(content),
-            4 => Solution::new::<day4::GiantSquid>(content),
-            5 => Solution::new::<day5::HydrothermalVenture>(content),
-            6 => Solution::new::<day6::Lanternfish>(content),
-            7 => Solution::new::<day7::Whales>(content),
-            8 => Solution::new::<day8::SevenSegment>(content),
-            9 => Solution::new::<day9::SmokeBasin>(content),
-            _ => unreachable!(),
-        };
-
-        solution.get_result();
-    }
+    solution.get_result();
 }
 
 fn get_time<T>(f: impl FnOnce() -> T) -> (T, Duration) {
