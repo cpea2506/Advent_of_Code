@@ -5,8 +5,12 @@ pub struct SonarSweep {
 impl crate::Avent for SonarSweep {
     fn new(data: &str) -> Self {
         SonarSweep {
-            data: data.lines().filter_map(|l| l.parse().ok()).collect(),
+            data: data.lines().flat_map(|l| l.parse()).collect(),
         }
+    }
+
+    fn day() -> u8 {
+        1
     }
 
     fn part1(&self) -> usize {

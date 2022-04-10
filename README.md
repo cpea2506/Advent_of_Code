@@ -9,18 +9,20 @@ Language:
 ## Usage:
 
 ```
-cargo run --release <day>
+cargo run --release -- <day>
 
-<day>: specific day's number
+<day>: AOC day
 
 Flags: 
     -e, --example: Uses example file provided by AOC
+    -a, --all: Gets all solutions for all days
 ```
 
 For example: 
 
-- `cargo run --release 1` to see solution for day 1
-- `cargo run --release 1 --example (or -e)` to see solution for day 1 with example file
+- `cargo run --release -- 1` to see solution for day 1
+- `cargo run --release -- 1 --example (or -e)` to see solution for day 1 with example file
+- `cargo run --release -- --all (or -a)` to see all solutions for all days
 
 ## Some note
 

@@ -24,6 +24,10 @@ impl crate::Avent for BinaryDiagnostic {
         }
     }
 
+    fn day() -> u8 {
+        3
+    }
+
     fn part1(&self) -> usize {
         let mut iter = self.data.iter();
 

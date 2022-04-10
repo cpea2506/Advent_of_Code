@@ -34,11 +34,14 @@ impl crate::Avent for SevenSegment {
         SevenSegment { entries }
     }
 
+    fn day() -> u8 {
+        8
+    }
+
     fn part1(&self) -> usize {
         self.entries
             .iter()
-            .map(|e| e.output.split_whitespace())
-            .flatten()
+            .flat_map(|e| e.output.split_whitespace())
             .filter(|s| Self::is_unique(s))
             .count()
     }

@@ -1,15 +1,19 @@
 pub struct SmokeBasin {
-    heightmap: Vec<Vec<u8>>,
+    heightmap: Vec<Vec<usize>>,
 }
 
 impl crate::Avent for SmokeBasin {
     fn new(data: &str) -> Self {
         let heightmap = data
             .lines()
-            .map(|l| l.split("").filter_map(|v| v.parse::<u8>().ok()).collect())
+            .map(|l| l.split("").flat_map(|v| v.parse()).collect())
             .collect();
 
         SmokeBasin { heightmap }
+    }
+
+    fn day() -> u8 {
+        9
     }
 
     fn part1(&self) -> usize {
@@ -22,20 +26,11 @@ impl crate::Avent for SmokeBasin {
             for (j, &height) in map.iter().enumerate() {
                 if ADJACENT
                     .iter()
-                    .filter(|(x, y)| {
-                        let new_x = i as isize + x;
-                        let new_y = j as isize + y;
-
-                        new_x >= 0 && new_x < len as isize && new_y >= 0 && new_y < width as isize
-                    })
-                    .all(|&(x, y)| {
-                        let new_x = i as isize + x;
-                        let new_y = j as isize + y;
-
-                        height < self.heightmap[new_x as usize][new_y as usize]
-                    })
+                    .map(|(x, y)| (i as isize + x, j as isize + y))
+                    .filter(|&(x, y)| x >= 0 && x < len as isize && y >= 0 && y < width as isize)
+                    .all(|(x, y)| height < self.heightmap[x as usize][y as usize])
                 {
-                    sum += (height + 1) as usize
+                    sum += height + 1
                 }
             }
         }

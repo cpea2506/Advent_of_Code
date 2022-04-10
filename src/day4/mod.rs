@@ -9,20 +9,21 @@ impl crate::Avent for GiantSquid {
     fn new(data: &str) -> Self {
         let mut iter = data.lines();
 
-        let draw_numbers: Vec<u8> = iter
+        let draw_nums = iter
             .next()
             .unwrap()
             .split(',')
-            .map(|c| c.parse().unwrap())
+            .flat_map(|c| c.parse())
             .collect();
 
-        let mut boards: Vec<Board> = Vec::new();
+        let mut boards = Vec::new();
+
         while iter.next().is_some() {
-            let board: Board = iter
+            let board = iter
                 .by_ref()
                 .take(5)
                 .flat_map(|s| s.split_whitespace())
-                .map(|c| c.parse().unwrap())
+                .flat_map(|c| c.parse())
                 .collect::<Vec<u8>>()
                 .try_into()
                 .unwrap();
@@ -30,10 +31,11 @@ impl crate::Avent for GiantSquid {
             boards.push(board);
         }
 
-        GiantSquid {
-            draw_nums: draw_numbers,
-            boards,
-        }
+        GiantSquid { draw_nums, boards }
+    }
+
+    fn day() -> u8 {
+        4
     }
 
     fn part1(&self) -> usize {
@@ -65,10 +67,9 @@ fn winning_score(board: Board, draw_nums: &[u8], last_draw_index: Option<usize>)
         let unmarked_sum = board
             .iter()
             .filter(|v| !draw_numbers.contains(v))
-            .map(|&v| v as usize)
-            .sum::<usize>();
+            .sum::<u8>();
 
-        draw_numbers[index] as usize * unmarked_sum
+        (draw_numbers[index] * unmarked_sum) as usize
     } else {
         0
     }

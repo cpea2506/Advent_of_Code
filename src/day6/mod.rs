@@ -4,7 +4,7 @@ pub struct Lanternfish {
 
 impl Lanternfish {
     fn count(&self, day: usize) -> usize {
-        let mut days = [0usize; 9];
+        let mut days = [0; 9];
 
         for &timer in &self.internal_timer {
             days[timer as usize] += 1;
@@ -25,9 +25,13 @@ impl Lanternfish {
 
 impl crate::Avent for Lanternfish {
     fn new(data: &str) -> Self {
-        let internal_timer = data.split(',').filter_map(|v| v.parse().ok()).collect();
+        let internal_timer = data.split(',').flat_map(|v| v.parse()).collect();
 
         Lanternfish { internal_timer }
+    }
+
+    fn day() -> u8 {
+        6
     }
 
     fn part1(&self) -> usize {

@@ -18,13 +18,13 @@ impl crate::Avent for Dive {
         let commands: Vec<Command> = data
             .lines()
             .map(|d| {
-                let mut cmd_iter = d.split_whitespace();
-                let direction = match cmd_iter.next().unwrap() {
+                let cmd = d.split_whitespace().collect::<Vec<&str>>();
+                let direction = match cmd[0] {
                     "forward" => Direction::Forward,
                     "up" => Direction::Up,
                     _ => Direction::Down,
                 };
-                let count = cmd_iter.next().unwrap().parse::<usize>().unwrap();
+                let count = cmd[1].parse().unwrap();
 
                 Command { direction, count }
             })
@@ -33,9 +33,13 @@ impl crate::Avent for Dive {
         Dive { commands }
     }
 
+    fn day() -> u8 {
+        2
+    }
+
     fn part1(&self) -> usize {
-        let mut horziontal: usize = 0;
-        let mut depth: usize = 0;
+        let mut horziontal = 0;
+        let mut depth = 0;
 
         self.commands.iter().for_each(|c| match c.direction {
             Direction::Forward => horziontal += c.count,
@@ -43,7 +47,7 @@ impl crate::Avent for Dive {
             Direction::Up => depth -= c.count,
         });
 
-        (horziontal * depth) as usize
+        horziontal * depth
     }
 
     fn part2(&self) -> usize {
@@ -60,6 +64,6 @@ impl crate::Avent for Dive {
             Direction::Up => aim -= c.count,
         });
 
-        (horziontal * depth) as usize
+        horziontal * depth
     }
 }

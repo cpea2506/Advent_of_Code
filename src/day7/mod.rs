@@ -1,5 +1,4 @@
 trait Math {
-    fn abs_sub(self, rhs: usize) -> usize;
     fn is_even(&self) -> bool;
     fn triangle_sum(s: usize) -> usize {
         (s + 1) * s / 2
@@ -7,14 +6,6 @@ trait Math {
 }
 
 impl Math for usize {
-    fn abs_sub(self, rhs: usize) -> usize {
-        if self > rhs {
-            self - rhs
-        } else {
-            rhs - self
-        }
-    }
-
     fn is_even(&self) -> bool {
         self % 2 == 0
     }
@@ -45,18 +36,22 @@ impl crate::Avent for Whales {
     fn new(data: &str) -> Self {
         let mut positions = data
             .split(',')
-            .filter_map(|v| v.parse().ok())
+            .flat_map(|v| v.parse())
             .collect::<Vec<usize>>();
         positions.sort_unstable();
 
         Whales { positions }
     }
 
+    fn day() -> u8 {
+        8
+    }
+
     fn part1(&self) -> usize {
         // the sum of distances to the middle of slice (median) has the lowest fuel
         let median = self.median();
 
-        self.positions.iter().map(|&v| v.abs_sub(median)).sum()
+        self.positions.iter().map(|&v| v.abs_diff(median)).sum()
     }
 
     fn part2(&self) -> usize {
@@ -65,11 +60,7 @@ impl crate::Avent for Whales {
             .map(|p| {
                 self.positions
                     .iter()
-                    .map(|&v| {
-                        let diff = v.abs_sub(p);
-
-                        usize::triangle_sum(diff)
-                    })
+                    .map(|&v| usize::triangle_sum(v.abs_diff(p)))
                     .sum()
             })
             .min()

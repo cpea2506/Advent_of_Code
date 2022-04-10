@@ -8,7 +8,7 @@ pub struct Coordinate {
 
 impl Coordinate {
     fn new(coord: &str) -> Self {
-        let mut coord_iter = coord.split(',').filter_map(|c| c.parse::<usize>().ok());
+        let mut coord_iter = coord.split(',').flat_map(|c| c.parse());
         let x = coord_iter.next().unwrap();
         let y = coord_iter.next().unwrap();
 
@@ -51,6 +51,10 @@ impl crate::Avent for HydrothermalVenture {
         HydrothermalVenture { lines }
     }
 
+    fn day() -> u8 {
+        5
+    }
+
     fn part1(&self) -> usize {
         count_overlap(self.lines.iter().filter(|l| !l.is_diagonal()))
     }
@@ -82,5 +86,5 @@ fn count_overlap<'a>(iter: impl Iterator<Item = &'a Line>) -> usize {
         }
     });
 
-    map.iter().filter(|&&v| v > 1).count()
+    map.into_iter().filter(|&v| v > 1).count()
 }
