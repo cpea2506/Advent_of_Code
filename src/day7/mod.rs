@@ -44,7 +44,7 @@ impl crate::Avent for Whales {
     }
 
     fn day() -> u8 {
-        8
+        7
     }
 
     fn part1(&self) -> usize {
