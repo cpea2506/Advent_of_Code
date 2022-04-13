@@ -1,5 +1,4 @@
 use avent::get_solution;
-use std::error::Error;
 use structopt::StructOpt;
 
 #[derive(StructOpt)]
@@ -14,7 +13,7 @@ struct Cli {
     all: bool,
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+fn main() {
     let args = Cli::from_args();
     let main_file = if args.example { "example" } else { "input" };
 
@@ -23,6 +22,4 @@ fn main() -> Result<(), Box<dyn Error>> {
     } else {
         get_solution(main_file, args.day);
     }
-
-    Ok(())
 }
