@@ -14,11 +14,12 @@ struct Cli {
 }
 
 fn main() {
+    let day_count = 10;
     let args = Cli::from_args();
     let main_file = if args.example { "example" } else { "input" };
 
     if args.all {
-        (1..=9).for_each(|d| get_solution(main_file, d));
+        (1..=day_count).for_each(|d| get_solution(main_file, d));
     } else {
         get_solution(main_file, args.day);
     }
