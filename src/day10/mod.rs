@@ -1,6 +1,6 @@
 type Line = Vec<char>;
 
-struct SyntaxScoring {
+pub struct SyntaxScoring {
     chunk_lines: Vec<Line>,
 }
 

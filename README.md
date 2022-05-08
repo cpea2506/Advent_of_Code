@@ -9,7 +9,7 @@ Language:
 ## Usage:
 
 ```
-cargo run --release -- <day>
+cargo avent <day>
 
 <day>: AOC day
 
@@ -20,9 +20,9 @@ Flags:
 
 For example: 
 
-- `cargo run --release -- 1` to see solution for day 1
-- `cargo run --release -- 1 --example (or -e)` to see solution for day 1 with example file
-- `cargo run --release -- --all (or -a)` to see all solutions for all days
+- `cargo avent 1` to see solution for day 1
+- `cargo avent 1 --example (or -e)` to see solution for day 1 with example file
+- `cargo avent --all (or -a)` to see all solutions for all days
 
 ## Some note
 

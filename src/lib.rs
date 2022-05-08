@@ -83,6 +83,7 @@ pub fn get_solution(main_file: &str, day: u8) {
         7 => Solution::new::<day7::Whales>(content),
         8 => Solution::new::<day8::SevenSegment>(content),
         9 => Solution::new::<day9::SmokeBasin>(content),
+        10 => Solution::new::<day10::SyntaxScoring>(content),
         _ => unreachable!(),
     };
 
