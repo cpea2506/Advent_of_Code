@@ -69,7 +69,7 @@ impl Solution {
 
 pub fn get_solution(main_file: &str, day: u8) {
     let filename = format!("src/day{}/{}.txt", day, main_file);
-    let content = &fs::read_to_string(&filename)
+    let content = &fs::read_to_string(filename)
         .with_context(|| format!("could not read {} file for day {}", main_file, day))
         .unwrap();
 

@@ -1,17 +1,17 @@
 type Line = Vec<char>;
 
 pub struct SyntaxScoring {
-    chunk_lines: Vec<Line>,
+    _chunk_lines: Vec<Line>,
 }
 
 impl crate::Avent for SyntaxScoring {
     fn new(data: &str) -> Self {
-        let chunk_lines = data
+        let _chunk_lines = data
             .lines()
             .map(|l| l.chars().collect())
             .collect::<Vec<Vec<char>>>();
 
-        SyntaxScoring { chunk_lines }
+        SyntaxScoring { _chunk_lines }
     }
 
     fn day() -> u8 {
