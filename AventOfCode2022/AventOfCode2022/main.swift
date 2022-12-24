@@ -10,7 +10,8 @@ import Foundation
 // MARK: - Avent
 
 protocol Avent {
-    static var day: UInt8 { get }
+    var day: UInt8 { get }
+
     init(data: String)
     func part1() -> UInt
     func part2() -> UInt
@@ -18,42 +19,43 @@ protocol Avent {
 
 // MARK: - Solution
 
-struct Solution<Event: Avent> {
+struct Solution {
     // MARK: Lifecycle
 
-    init(data: String) {
-        (event, time) = getTime { Event(data: data) }
-        day = Event.day
+    init?(for event: Avent.Type, withData data: String) {
+        (self.event, time) = getTime { event.init(data: data) }
     }
 
     // MARK: Internal
 
-    var event: Event?
-    var time: Int64?
-    var day: UInt8?
-
     func getResult() {
-        let (time1, part1) = getTime(for: event!.part1)
-        let (time2, part2) = getTime(for: event!.part2)
+        let (part1, time1) = getTime(for: event.part1)
+        let (part2, time2) = getTime(for: event.part2)
 
         print("""
-        Solution for day \(day!)
-        Collect data in \u{001B}[0;36m\(time!)
-        part 1: \(part1) in \u{001B}[0;36m\(time1)
-        part 2: \(part2) in \u{001B}[0;36m\(time2)
+        Solution for day \(event.day)
+        collected data in \(time)ms
+        part 1: \(part1) in \(time1)ms
+        part 2: \(part2) in \(time2)ms
         """)
     }
 
-    /// Get the time to compute solution
-    func getTime<T>(for solution: () -> T) -> (T, Int64) {
-        let clock = ContinuousClock()
-        var result: T?
-        let time = clock.measure {
-            result = solution()
-        }
+    // MARK: Private
 
-        return (result!, time.components.seconds)
+    private var event: Avent
+    private var time: Double
+}
+
+/// Get the time to compute solution
+func getTime<T>(for solution: () -> T) -> (T, Double) {
+    let clock = ContinuousClock()
+    var result: T?
+    let time = clock.measure {
+        result = solution()
     }
+
+    // SAFETY: result always has value when clock done measuring
+    return (result!, Double(time.components.attoseconds) * 0.000000000000001)
 }
 
 // MARK: - AOC2022
@@ -66,20 +68,27 @@ struct AOC2022: ParsableCommand {
     // MARK: Internal
 
     func run() throws {
-        let mainFile = example ? "example" : "input"
-        let filePath = "day\(day)/\(mainFile).txt"
+        let mainFile = example ? "example.txt" : "input.txt"
+
+        // temporary hack to get true file path to this project
+        let url = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+            .appending(component: "day\(day)/\(mainFile)")
+
         do {
-            let data = try String(contentsOfFile: filePath)
-            var solution = Solution<Day1>(data: data)
+            let data = try String(contentsOf: url)
+            var solution: Solution?
 
             switch day {
             case 1:
-                solution = Solution<Day1>(data: data)
+                solution = Solution(for: Day1.self, withData: data)
             default:
-                print("not yet implemented")
+                print("Info: not yet implemented")
             }
 
-            solution.getResult()
+            if let solution {
+                solution.getResult()
+            }
         } catch {
             print("Error loading file: 🌶️ \(error)")
         }

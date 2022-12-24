@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		5832A07D29565F0D00A78902 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A07C29565F0D00A78902 /* main.swift */; };
 		5832A08529565F3900A78902 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 5832A08429565F3900A78902 /* ArgumentParser */; };
-		5832A090295664CF00A78902 /* init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A08F295664CF00A78902 /* init.swift */; };
+		5832A090295664CF00A78902 /* day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A08F295664CF00A78902 /* day1.swift */; };
+		5844267329573CCF00B77BD7 /* day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844267229573CCF00B77BD7 /* day2.swift */; };
 		AFE5C812E7CFD8B5F2C0056C /* libPods-AventOfCode2022.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E52D2F633A5AF96BCF9308 /* libPods-AventOfCode2022.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5832A07729565F0D00A78902 /* CopyFiles */ = {
+		5832A07729565F0D00A78902 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -30,8 +32,9 @@
 		5832A07929565F0D00A78902 /* AventOfCode2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AventOfCode2022; sourceTree = BUILT_PRODUCTS_DIR; };
 		5832A07C29565F0D00A78902 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5832A08D295664C700A78902 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
-		5832A08E295664CB00A78902 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
-		5832A08F295664CF00A78902 /* init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = init.swift; sourceTree = "<group>"; };
+		5832A08F295664CF00A78902 /* day1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day1.swift; sourceTree = "<group>"; };
+		5844267029571FD500B77BD7 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		5844267229573CCF00B77BD7 /* day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2.swift; sourceTree = "<group>"; };
 		B1B58DBCD015B9C6B6ACA947 /* Pods-AventOfCode2022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.debug.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.debug.xcconfig"; sourceTree = "<group>"; };
 		F127792AD8F25D63685BDF33 /* Pods-AventOfCode2022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.release.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +82,7 @@
 		5832A07B29565F0D00A78902 /* AventOfCode2022 */ = {
 			isa = PBXGroup;
 			children = (
+				5844267129573CC200B77BD7 /* day2 */,
 				5832A08C295664BD00A78902 /* day1 */,
 				5832A07C29565F0D00A78902 /* main.swift */,
 			);
@@ -89,10 +93,18 @@
 			isa = PBXGroup;
 			children = (
 				5832A08D295664C700A78902 /* example.txt */,
-				5832A08F295664CF00A78902 /* init.swift */,
-				5832A08E295664CB00A78902 /* input.txt */,
+				5832A08F295664CF00A78902 /* day1.swift */,
+				5844267029571FD500B77BD7 /* input.txt */,
 			);
 			path = day1;
+			sourceTree = "<group>";
+		};
+		5844267129573CC200B77BD7 /* day2 */ = {
+			isa = PBXGroup;
+			children = (
+				5844267229573CCF00B77BD7 /* day2.swift */,
+			);
+			path = day2;
 			sourceTree = "<group>";
 		};
 		CD3FADC110F02DD4EC9A1461 /* Frameworks */ = {
@@ -113,7 +125,7 @@
 				6D0D5AABA212622C643EC642 /* [CP] Check Pods Manifest.lock */,
 				5832A07529565F0D00A78902 /* Sources */,
 				5832A07629565F0D00A78902 /* Frameworks */,
-				5832A07729565F0D00A78902 /* CopyFiles */,
+				5832A07729565F0D00A78902 /* Copy Files */,
 				5832A086295660DC00A78902 /* ShellScript */,
 			);
 			buildRules = (
@@ -212,8 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5832A090295664CF00A78902 /* init.swift in Sources */,
+				5832A090295664CF00A78902 /* day1.swift in Sources */,
 				5832A07D29565F0D00A78902 /* main.swift in Sources */,
+				5844267329573CCF00B77BD7 /* day2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

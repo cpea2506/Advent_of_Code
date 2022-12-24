@@ -56,6 +56,10 @@
             argument = "1"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-e"
+            isEnabled = "NO">
+         </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
