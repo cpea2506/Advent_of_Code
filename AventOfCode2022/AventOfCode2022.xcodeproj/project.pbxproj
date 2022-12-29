@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A081685FA5963BEE8CF56F /* libPods-AventOfCode2022.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0918EF500496AE60EE9D6C7 /* libPods-AventOfCode2022.a */; };
 		5832A07D29565F0D00A78902 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A07C29565F0D00A78902 /* main.swift */; };
 		5832A08529565F3900A78902 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 5832A08429565F3900A78902 /* ArgumentParser */; };
 		5832A090295664CF00A78902 /* day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A08F295664CF00A78902 /* day1.swift */; };
 		5844267329573CCF00B77BD7 /* day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844267229573CCF00B77BD7 /* day2.swift */; };
-		AFE5C812E7CFD8B5F2C0056C /* libPods-AventOfCode2022.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E52D2F633A5AF96BCF9308 /* libPods-AventOfCode2022.a */; };
+		58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE625295E914800BFBC22 /* day1Lib.swift */; };
+		58BEE62E295EED9200BFBC22 /* AventOfCode2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */; };
+		58CD152E295DA05700D68429 /* lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD152D295DA05700D68429 /* lib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,15 +31,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		46E52D2F633A5AF96BCF9308 /* libPods-AventOfCode2022.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AventOfCode2022.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5832A07929565F0D00A78902 /* AventOfCode2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AventOfCode2022; sourceTree = BUILT_PRODUCTS_DIR; };
 		5832A07C29565F0D00A78902 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5832A08D295664C700A78902 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		5832A08F295664CF00A78902 /* day1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day1.swift; sourceTree = "<group>"; };
 		5844267029571FD500B77BD7 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		5844267229573CCF00B77BD7 /* day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2.swift; sourceTree = "<group>"; };
-		B1B58DBCD015B9C6B6ACA947 /* Pods-AventOfCode2022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.debug.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.debug.xcconfig"; sourceTree = "<group>"; };
-		F127792AD8F25D63685BDF33 /* Pods-AventOfCode2022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.release.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.release.xcconfig"; sourceTree = "<group>"; };
+		58BEE625295E914800BFBC22 /* day1Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day1Lib.swift; sourceTree = "<group>"; };
+		58BEE62B295EED9200BFBC22 /* AventOfCode2022Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AventOfCode2022Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AventOfCode2022Tests.swift; sourceTree = "<group>"; };
+		58CD152D295DA05700D68429 /* lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lib.swift; sourceTree = "<group>"; };
+		8FDA68B36DAC826EF257C4E4 /* Pods-AventOfCode2022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.debug.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.debug.xcconfig"; sourceTree = "<group>"; };
+		A3DF88696F4C165CBF714557 /* Pods-AventOfCode2022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.release.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.release.xcconfig"; sourceTree = "<group>"; };
+		C0918EF500496AE60EE9D6C7 /* libPods-AventOfCode2022.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AventOfCode2022.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +52,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5832A08529565F3900A78902 /* ArgumentParser in Frameworks */,
-				AFE5C812E7CFD8B5F2C0056C /* libPods-AventOfCode2022.a in Frameworks */,
+				17A081685FA5963BEE8CF56F /* libPods-AventOfCode2022.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BEE628295EED9200BFBC22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +69,8 @@
 		2EF36695768AC02B33402EE5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B1B58DBCD015B9C6B6ACA947 /* Pods-AventOfCode2022.debug.xcconfig */,
-				F127792AD8F25D63685BDF33 /* Pods-AventOfCode2022.release.xcconfig */,
+				8FDA68B36DAC826EF257C4E4 /* Pods-AventOfCode2022.debug.xcconfig */,
+				A3DF88696F4C165CBF714557 /* Pods-AventOfCode2022.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -65,9 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				5832A07B29565F0D00A78902 /* AventOfCode2022 */,
+				58BEE62C295EED9200BFBC22 /* AventOfCode2022Tests */,
 				5832A07A29565F0D00A78902 /* Products */,
 				2EF36695768AC02B33402EE5 /* Pods */,
-				CD3FADC110F02DD4EC9A1461 /* Frameworks */,
+				8A42A398C24526CFD9E61C5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5832A07929565F0D00A78902 /* AventOfCode2022 */,
+				58BEE62B295EED9200BFBC22 /* AventOfCode2022Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +101,7 @@
 				5844267129573CC200B77BD7 /* day2 */,
 				5832A08C295664BD00A78902 /* day1 */,
 				5832A07C29565F0D00A78902 /* main.swift */,
+				58CD152D295DA05700D68429 /* lib.swift */,
 			);
 			path = AventOfCode2022;
 			sourceTree = "<group>";
@@ -95,6 +112,7 @@
 				5832A08D295664C700A78902 /* example.txt */,
 				5832A08F295664CF00A78902 /* day1.swift */,
 				5844267029571FD500B77BD7 /* input.txt */,
+				58BEE625295E914800BFBC22 /* day1Lib.swift */,
 			);
 			path = day1;
 			sourceTree = "<group>";
@@ -107,10 +125,18 @@
 			path = day2;
 			sourceTree = "<group>";
 		};
-		CD3FADC110F02DD4EC9A1461 /* Frameworks */ = {
+		58BEE62C295EED9200BFBC22 /* AventOfCode2022Tests */ = {
 			isa = PBXGroup;
 			children = (
-				46E52D2F633A5AF96BCF9308 /* libPods-AventOfCode2022.a */,
+				58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */,
+			);
+			path = AventOfCode2022Tests;
+			sourceTree = "<group>";
+		};
+		8A42A398C24526CFD9E61C5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0918EF500496AE60EE9D6C7 /* libPods-AventOfCode2022.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,7 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5832A08029565F0D00A78902 /* Build configuration list for PBXNativeTarget "AventOfCode2022" */;
 			buildPhases = (
-				6D0D5AABA212622C643EC642 /* [CP] Check Pods Manifest.lock */,
+				83F31049C42C588BC97007AB /* [CP] Check Pods Manifest.lock */,
 				5832A07529565F0D00A78902 /* Sources */,
 				5832A07629565F0D00A78902 /* Frameworks */,
 				5832A07729565F0D00A78902 /* Copy Files */,
@@ -140,6 +166,23 @@
 			productReference = 5832A07929565F0D00A78902 /* AventOfCode2022 */;
 			productType = "com.apple.product-type.tool";
 		};
+		58BEE62A295EED9200BFBC22 /* AventOfCode2022Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58BEE62F295EED9200BFBC22 /* Build configuration list for PBXNativeTarget "AventOfCode2022Tests" */;
+			buildPhases = (
+				58BEE627295EED9200BFBC22 /* Sources */,
+				58BEE628295EED9200BFBC22 /* Frameworks */,
+				58BEE629295EED9200BFBC22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AventOfCode2022Tests;
+			productName = AventOfCode2022Tests;
+			productReference = 58BEE62B295EED9200BFBC22 /* AventOfCode2022Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -151,6 +194,9 @@
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					5832A07829565F0D00A78902 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					58BEE62A295EED9200BFBC22 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -165,16 +211,27 @@
 			);
 			mainGroup = 5832A07029565F0D00A78902;
 			packageReferences = (
-				5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser.git" */,
 			);
 			productRefGroup = 5832A07A29565F0D00A78902 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5832A07829565F0D00A78902 /* AventOfCode2022 */,
+				58BEE62A295EED9200BFBC22 /* AventOfCode2022Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58BEE629295EED9200BFBC22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		5832A086295660DC00A78902 /* ShellScript */ = {
@@ -195,7 +252,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		6D0D5AABA212622C643EC642 /* [CP] Check Pods Manifest.lock */ = {
+		83F31049C42C588BC97007AB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,7 +283,17 @@
 			files = (
 				5832A090295664CF00A78902 /* day1.swift in Sources */,
 				5832A07D29565F0D00A78902 /* main.swift in Sources */,
+				58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */,
 				5844267329573CCF00B77BD7 /* day2.swift in Sources */,
+				58CD152E295DA05700D68429 /* lib.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BEE627295EED9200BFBC22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58BEE62E295EED9200BFBC22 /* AventOfCode2022Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +334,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -327,8 +396,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
+				ENABLE_TESTING_SEARCH_PATHS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -348,11 +420,14 @@
 		};
 		5832A08129565F0D00A78902 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1B58DBCD015B9C6B6ACA947 /* Pods-AventOfCode2022.debug.xcconfig */;
+			baseConfigurationReference = 8FDA68B36DAC826EF257C4E4 /* Pods-AventOfCode2022.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R5YS792LYS;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -360,12 +435,47 @@
 		};
 		5832A08229565F0D00A78902 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F127792AD8F25D63685BDF33 /* Pods-AventOfCode2022.release.xcconfig */;
+			baseConfigurationReference = A3DF88696F4C165CBF714557 /* Pods-AventOfCode2022.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R5YS792LYS;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		58BEE630295EED9200BFBC22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R5YS792LYS;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cpea.AventOfCode2022Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		58BEE631295EED9200BFBC22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R5YS792LYS;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cpea.AventOfCode2022Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -380,7 +490,7 @@
 				5832A07F29565F0D00A78902 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5832A08029565F0D00A78902 /* Build configuration list for PBXNativeTarget "AventOfCode2022" */ = {
 			isa = XCConfigurationList;
@@ -389,12 +499,21 @@
 				5832A08229565F0D00A78902 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		58BEE62F295EED9200BFBC22 /* Build configuration list for PBXNativeTarget "AventOfCode2022Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58BEE630295EED9200BFBC22 /* Debug */,
+				58BEE631295EED9200BFBC22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+		5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
 			requirement = {
@@ -407,7 +526,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5832A08429565F3900A78902 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			package = 5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser.git" */;
 			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -7,7 +7,7 @@
 // MARK: - Day1
 
 struct Day1 {
-    var calories: [UInt] = []
+    private var calories: [UInt] = []
     var day: UInt8 = 1
 }
 
@@ -17,27 +17,28 @@ extension Day1: Avent {
     // MARK: Lifecycle
 
     init(data: String) {
-        let components = data.components(separatedBy: .newlines)
-        var sum: UInt = 0
+        var totalElveCalories: UInt = 0
 
-        for calory in components {
+        for calory in data.components(separatedBy: .newlines) {
             if calory.isEmpty {
-                calories.append(sum)
-                sum = 0
+                calories.append(totalElveCalories)
+                totalElveCalories = 0
                 continue
             }
 
-            sum += UInt(calory)!
+            // SAFETY: calory is never a float
+            totalElveCalories += UInt(calory)!
         }
     }
 
     // MARK: Internal
 
     func part1() -> UInt {
+        // SAFETY: calories cannot be empty
         calories.max()!
     }
 
     func part2() -> UInt {
-        0
+        calories.kNearest(3, by: >).reduce(0, +)
     }
 }

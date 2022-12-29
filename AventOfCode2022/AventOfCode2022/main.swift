@@ -34,9 +34,9 @@ struct Solution {
 
         print("""
         Solution for day \(event.day)
-        collected data in \(time)ms
-        part 1: \(part1) in \(time1)ms
-        part 2: \(part2) in \(time2)ms
+        collected data in \(time) ms
+        part 1: \(part1) in \(time1) ms
+        part 2: \(part2) in \(time2) ms
         """)
     }
 
@@ -46,37 +46,18 @@ struct Solution {
     private var time: Double
 }
 
-/// Get the time to compute solution
-func getTime<T>(for solution: () -> T) -> (T, Double) {
-    let clock = ContinuousClock()
-    var result: T?
-    let time = clock.measure {
-        result = solution()
-    }
-
-    // SAFETY: result always has value when clock done measuring
-    return (result!, Double(time.components.attoseconds) * 0.000000000000001)
-}
-
 // MARK: - AOC2022
 
 struct AOC2022: ParsableCommand {
-    // MARK: Public
-
-    public static let configuration = CommandConfiguration(abstract: "Avent of Code 2022")
-
     // MARK: Internal
+
+    static let configuration = CommandConfiguration(abstract: "Avent of Code 2022")
 
     func run() throws {
         let mainFile = example ? "example.txt" : "input.txt"
 
-        // temporary hack to get true file path to this project
-        let url = URL(fileURLWithPath: #filePath)
-            .deletingLastPathComponent()
-            .appending(component: "day\(day)/\(mainFile)")
-
         do {
-            let data = try String(contentsOf: url)
+            let data = try readFileInDay(day, for: mainFile)
             var solution: Solution?
 
             switch day {
