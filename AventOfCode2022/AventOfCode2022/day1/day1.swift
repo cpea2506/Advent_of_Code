@@ -26,7 +26,7 @@ extension Day1: Avent {
                 continue
             }
 
-            // SAFETY: calory is never a float
+            // SAFETY: calory always has value and is a number
             totalElveCalories += UInt(calory)!
         }
     }
