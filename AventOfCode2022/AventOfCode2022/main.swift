@@ -5,7 +5,6 @@
 //
 
 import ArgumentParser
-import Foundation
 
 // MARK: - Avent
 
@@ -63,6 +62,8 @@ struct AOC2022: ParsableCommand {
             switch day {
             case 1:
                 solution = Solution(for: Day1.self, withData: data)
+            case 2:
+                solution = Solution(for: Day2.self, withData: data)
             default:
                 print("Info: not yet implemented")
             }

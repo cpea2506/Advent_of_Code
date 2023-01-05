@@ -7,7 +7,8 @@
 // MARK: - Day2
 
 struct Day2 {
-    var calories: [UInt] = []
+    private var scores: [RPSTuple] = []
+    var day: UInt8 = 2
 }
 
 // MARK: Avent
@@ -15,33 +16,31 @@ struct Day2 {
 extension Day2: Avent {
     // MARK: Lifecycle
 
-    var day: UInt8 { 1 }
-
     init(data: String) {
-        let components = data.components(separatedBy: .newlines)
-        var sum: UInt = 0
+        scores = data.split(whereSeparator: \.isNewline).map { round in
+            let components = round.components(separatedBy: " ")
 
-        for calory in components {
-            if calory.isEmpty {
-                calories.append(sum)
-                sum = 0
-                continue
-            }
-            sum += UInt(calory)!
+            return (opponent: Shape(fromValue: components[0]), unknown: components[1])
         }
     }
 
     // MARK: Internal
 
     func part1() -> UInt {
-        guard let max = calories.max() else {
-            return 0
-        }
+        scores.reduce(0) {
+            let you = Shape(fromValue: $1.unknown)
+            let outcome = $1.opponent.compare(to: you)
 
-        return max
+            return $0 + you.rawValue + outcome.rawValue
+        }
     }
 
     func part2() -> UInt {
-        0
+        scores.reduce(0) {
+            let outcome = Outcome(fromValue: $1.unknown)
+            let you = outcome.getShape(against: $1.opponent)
+
+            return $0 + you.rawValue + outcome.rawValue
+        }
     }
 }

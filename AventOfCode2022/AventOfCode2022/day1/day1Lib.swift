@@ -3,7 +3,6 @@
 //
 // Copyright © 2022 CPea2506. All rights reserved.
 //
-import Foundation
 
 // See: https://github.com/apple/swift-algorithms/blob/3864606/Sources/Algorithms/SortedPrefix.swift
 extension Array {

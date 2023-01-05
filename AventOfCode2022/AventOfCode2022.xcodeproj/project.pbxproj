@@ -12,6 +12,7 @@
 		5832A08529565F3900A78902 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 5832A08429565F3900A78902 /* ArgumentParser */; };
 		5832A090295664CF00A78902 /* day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A08F295664CF00A78902 /* day1.swift */; };
 		5844267329573CCF00B77BD7 /* day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844267229573CCF00B77BD7 /* day2.swift */; };
+		584FEFAA2964ABB40089C3AC /* day2Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FEFA92964ABB40089C3AC /* day2Lib.swift */; };
 		58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE625295E914800BFBC22 /* day1Lib.swift */; };
 		58BEE62E295EED9200BFBC22 /* AventOfCode2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */; };
 		58CD152E295DA05700D68429 /* lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD152D295DA05700D68429 /* lib.swift */; };
@@ -37,6 +38,9 @@
 		5832A08F295664CF00A78902 /* day1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day1.swift; sourceTree = "<group>"; };
 		5844267029571FD500B77BD7 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		5844267229573CCF00B77BD7 /* day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2.swift; sourceTree = "<group>"; };
+		584FEFA72964677D0089C3AC /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
+		584FEFA82964678D0089C3AC /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		584FEFA92964ABB40089C3AC /* day2Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2Lib.swift; sourceTree = "<group>"; };
 		58BEE625295E914800BFBC22 /* day1Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day1Lib.swift; sourceTree = "<group>"; };
 		58BEE62B295EED9200BFBC22 /* AventOfCode2022Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AventOfCode2022Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AventOfCode2022Tests.swift; sourceTree = "<group>"; };
@@ -98,10 +102,10 @@
 		5832A07B29565F0D00A78902 /* AventOfCode2022 */ = {
 			isa = PBXGroup;
 			children = (
-				5844267129573CC200B77BD7 /* day2 */,
-				5832A08C295664BD00A78902 /* day1 */,
 				5832A07C29565F0D00A78902 /* main.swift */,
 				58CD152D295DA05700D68429 /* lib.swift */,
+				5832A08C295664BD00A78902 /* day1 */,
+				5844267129573CC200B77BD7 /* day2 */,
 			);
 			path = AventOfCode2022;
 			sourceTree = "<group>";
@@ -109,10 +113,10 @@
 		5832A08C295664BD00A78902 /* day1 */ = {
 			isa = PBXGroup;
 			children = (
-				5832A08D295664C700A78902 /* example.txt */,
 				5832A08F295664CF00A78902 /* day1.swift */,
-				5844267029571FD500B77BD7 /* input.txt */,
 				58BEE625295E914800BFBC22 /* day1Lib.swift */,
+				5832A08D295664C700A78902 /* example.txt */,
+				5844267029571FD500B77BD7 /* input.txt */,
 			);
 			path = day1;
 			sourceTree = "<group>";
@@ -121,6 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				5844267229573CCF00B77BD7 /* day2.swift */,
+				584FEFA92964ABB40089C3AC /* day2Lib.swift */,
+				584FEFA72964677D0089C3AC /* example.txt */,
+				584FEFA82964678D0089C3AC /* input.txt */,
 			);
 			path = day2;
 			sourceTree = "<group>";
@@ -211,7 +218,7 @@
 			);
 			mainGroup = 5832A07029565F0D00A78902;
 			packageReferences = (
-				5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser.git" */,
+				5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = 5832A07A29565F0D00A78902 /* Products */;
 			projectDirPath = "";
@@ -286,6 +293,7 @@
 				58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */,
 				5844267329573CCF00B77BD7 /* day2.swift in Sources */,
 				58CD152E295DA05700D68429 /* lib.swift in Sources */,
+				584FEFAA2964ABB40089C3AC /* day2Lib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +521,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser.git" */ = {
+		5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
 			requirement = {
@@ -526,7 +534,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5832A08429565F3900A78902 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser.git" */;
+			package = 5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */
