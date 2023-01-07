@@ -13,6 +13,8 @@
 		5832A090295664CF00A78902 /* day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A08F295664CF00A78902 /* day1.swift */; };
 		5844267329573CCF00B77BD7 /* day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844267229573CCF00B77BD7 /* day2.swift */; };
 		584FEFAA2964ABB40089C3AC /* day2Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FEFA92964ABB40089C3AC /* day2Lib.swift */; };
+		588FECFA2967DDE300FE57B0 /* day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FECF92967DDE300FE57B0 /* day3.swift */; };
+		588FECFC2967DDEE00FE57B0 /* day3Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FECFB2967DDEE00FE57B0 /* day3Lib.swift */; };
 		58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE625295E914800BFBC22 /* day1Lib.swift */; };
 		58BEE62E295EED9200BFBC22 /* AventOfCode2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */; };
 		58CD152E295DA05700D68429 /* lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD152D295DA05700D68429 /* lib.swift */; };
@@ -41,6 +43,10 @@
 		584FEFA72964677D0089C3AC /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		584FEFA82964678D0089C3AC /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		584FEFA92964ABB40089C3AC /* day2Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2Lib.swift; sourceTree = "<group>"; };
+		588FECF92967DDE300FE57B0 /* day3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day3.swift; sourceTree = "<group>"; };
+		588FECFB2967DDEE00FE57B0 /* day3Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day3Lib.swift; sourceTree = "<group>"; };
+		588FECFD2967DE0000FE57B0 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
+		588FECFE2967DE0C00FE57B0 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		58BEE625295E914800BFBC22 /* day1Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day1Lib.swift; sourceTree = "<group>"; };
 		58BEE62B295EED9200BFBC22 /* AventOfCode2022Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AventOfCode2022Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AventOfCode2022Tests.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 				58CD152D295DA05700D68429 /* lib.swift */,
 				5832A08C295664BD00A78902 /* day1 */,
 				5844267129573CC200B77BD7 /* day2 */,
+				588FECF82967DDCF00FE57B0 /* day3 */,
 			);
 			path = AventOfCode2022;
 			sourceTree = "<group>";
@@ -130,6 +137,17 @@
 				584FEFA82964678D0089C3AC /* input.txt */,
 			);
 			path = day2;
+			sourceTree = "<group>";
+		};
+		588FECF82967DDCF00FE57B0 /* day3 */ = {
+			isa = PBXGroup;
+			children = (
+				588FECF92967DDE300FE57B0 /* day3.swift */,
+				588FECFB2967DDEE00FE57B0 /* day3Lib.swift */,
+				588FECFD2967DE0000FE57B0 /* example.txt */,
+				588FECFE2967DE0C00FE57B0 /* input.txt */,
+			);
+			path = day3;
 			sourceTree = "<group>";
 		};
 		58BEE62C295EED9200BFBC22 /* AventOfCode2022Tests */ = {
@@ -288,11 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588FECFC2967DDEE00FE57B0 /* day3Lib.swift in Sources */,
 				5832A090295664CF00A78902 /* day1.swift in Sources */,
 				5832A07D29565F0D00A78902 /* main.swift in Sources */,
 				58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */,
 				5844267329573CCF00B77BD7 /* day2.swift in Sources */,
 				58CD152E295DA05700D68429 /* lib.swift in Sources */,
+				588FECFA2967DDE300FE57B0 /* day3.swift in Sources */,
 				584FEFAA2964ABB40089C3AC /* day2Lib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

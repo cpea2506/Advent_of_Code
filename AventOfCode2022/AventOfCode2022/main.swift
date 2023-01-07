@@ -21,13 +21,14 @@ protocol Avent {
 struct Solution {
     // MARK: Lifecycle
 
-    init?(for event: Avent.Type, withData data: String) {
-        (self.event, time) = getTime { event.init(data: data) }
+    init?(for eventType: Avent.Type) {
+        self.eventType = eventType
     }
 
     // MARK: Internal
 
-    func getResult() {
+    func getResult(withData data: String) {
+        let (event, time) = getTime { eventType.init(data: data) }
         let (part1, time1) = getTime(for: event.part1)
         let (part2, time2) = getTime(for: event.part2)
 
@@ -41,8 +42,7 @@ struct Solution {
 
     // MARK: Private
 
-    private var event: Avent
-    private var time: Double
+    private var eventType: Avent.Type
 }
 
 // MARK: - AOC2022
@@ -61,15 +61,17 @@ struct AOC2022: ParsableCommand {
 
             switch day {
             case 1:
-                solution = Solution(for: Day1.self, withData: data)
+                solution = Solution(for: Day1.self)
             case 2:
-                solution = Solution(for: Day2.self, withData: data)
+                solution = Solution(for: Day2.self)
+            case 3:
+                solution = Solution(for: Day3.self)
             default:
                 print("Info: not yet implemented")
             }
 
             if let solution {
-                solution.getResult()
+                solution.getResult(withData: data)
             }
         } catch {
             print("Error loading file: 🌶️ \(error)")
