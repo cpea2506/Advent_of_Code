@@ -17,11 +17,13 @@ extension Day2: Avent {
     // MARK: Lifecycle
 
     init(data: String) {
-        scores = data.split(whereSeparator: \.isNewline).map { round in
-            let components = round.components(separatedBy: " ")
+        scores = data
+            .split(whereSeparator: \.isNewline)
+            .map { round in
+                let components = round.components(separatedBy: " ")
 
-            return (opponent: Shape(fromValue: components[0]), unknown: components[1])
-        }
+                return (opponent: Shape(fromValue: components[0]), unknown: components[1])
+            }
     }
 
     // MARK: Internal
