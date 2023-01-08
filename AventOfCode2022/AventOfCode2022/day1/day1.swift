@@ -19,7 +19,8 @@ extension Day1: Avent {
     init(data: String) {
         var totalElveCalories: UInt = 0
 
-        for calory in data.components(separatedBy: .newlines) {
+        // we need the line terminator so we only need one condition
+        for calory in data.lines(omittingEmptySubsequences: false) {
             if calory.isEmpty {
                 calories.append(totalElveCalories)
                 totalElveCalories = 0

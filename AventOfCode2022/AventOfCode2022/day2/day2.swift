@@ -18,7 +18,7 @@ extension Day2: Avent {
 
     init(data: String) {
         scores = data
-            .split(whereSeparator: \.isNewline)
+            .lines()
             .map { round in
                 let components = round.components(separatedBy: " ")
 

@@ -6,6 +6,12 @@
 
 import Foundation
 
+extension String {
+    func lines(omittingEmptySubsequences: Bool = true) -> [SubSequence] {
+        split(omittingEmptySubsequences: omittingEmptySubsequences, whereSeparator: \.isNewline)
+    }
+}
+
 extension Double {
     func rounded(to decimal: Int) -> Self {
         let power = pow(10, Double(decimal))

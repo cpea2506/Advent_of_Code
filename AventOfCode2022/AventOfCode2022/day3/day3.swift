@@ -15,7 +15,7 @@ struct Day3 {
 
 extension Day3: Avent {
     init(data: String) {
-        rucksacks = data.split(whereSeparator: \.isNewline)
+        rucksacks = data.lines()
     }
 
     func part1() -> UInt {
