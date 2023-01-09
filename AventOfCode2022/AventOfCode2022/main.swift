@@ -66,6 +66,8 @@ struct AOC2022: ParsableCommand {
                 solution = Solution(for: Day2.self)
             case 3:
                 solution = Solution(for: Day3.self)
+            case 4:
+                solution = Solution(for: Day4.self)
             default:
                 print("Info: not yet implemented")
             }

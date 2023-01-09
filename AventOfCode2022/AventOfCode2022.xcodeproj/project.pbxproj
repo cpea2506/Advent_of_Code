@@ -13,10 +13,12 @@
 		5832A090295664CF00A78902 /* day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832A08F295664CF00A78902 /* day1.swift */; };
 		5844267329573CCF00B77BD7 /* day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844267229573CCF00B77BD7 /* day2.swift */; };
 		584FEFAA2964ABB40089C3AC /* day2Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FEFA92964ABB40089C3AC /* day2Lib.swift */; };
+		587ED6B7296C2B3000960B23 /* day4Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587ED6B6296C2B3000960B23 /* day4Lib.swift */; };
 		588FECFA2967DDE300FE57B0 /* day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FECF92967DDE300FE57B0 /* day3.swift */; };
 		588FECFC2967DDEE00FE57B0 /* day3Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FECFB2967DDEE00FE57B0 /* day3Lib.swift */; };
 		58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE625295E914800BFBC22 /* day1Lib.swift */; };
 		58BEE62E295EED9200BFBC22 /* AventOfCode2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */; };
+		58C90F5C296B345400947A08 /* day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C90F5B296B345400947A08 /* day4.swift */; };
 		58CD152E295DA05700D68429 /* lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD152D295DA05700D68429 /* lib.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,9 @@
 		584FEFA72964677D0089C3AC /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		584FEFA82964678D0089C3AC /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		584FEFA92964ABB40089C3AC /* day2Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2Lib.swift; sourceTree = "<group>"; };
+		587ED6B0296B530000960B23 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
+		587ED6B1296B530C00960B23 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		587ED6B6296C2B3000960B23 /* day4Lib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day4Lib.swift; sourceTree = "<group>"; };
 		588FECF92967DDE300FE57B0 /* day3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day3.swift; sourceTree = "<group>"; };
 		588FECFB2967DDEE00FE57B0 /* day3Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day3Lib.swift; sourceTree = "<group>"; };
 		588FECFD2967DE0000FE57B0 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		58BEE625295E914800BFBC22 /* day1Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day1Lib.swift; sourceTree = "<group>"; };
 		58BEE62B295EED9200BFBC22 /* AventOfCode2022Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AventOfCode2022Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AventOfCode2022Tests.swift; sourceTree = "<group>"; };
+		58C90F5B296B345400947A08 /* day4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day4.swift; sourceTree = "<group>"; };
 		58CD152D295DA05700D68429 /* lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lib.swift; sourceTree = "<group>"; };
 		8FDA68B36DAC826EF257C4E4 /* Pods-AventOfCode2022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.debug.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.debug.xcconfig"; sourceTree = "<group>"; };
 		A3DF88696F4C165CBF714557 /* Pods-AventOfCode2022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AventOfCode2022.release.xcconfig"; path = "Target Support Files/Pods-AventOfCode2022/Pods-AventOfCode2022.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 				5832A08C295664BD00A78902 /* day1 */,
 				5844267129573CC200B77BD7 /* day2 */,
 				588FECF82967DDCF00FE57B0 /* day3 */,
+				58C90F5A296B344B00947A08 /* day4 */,
 			);
 			path = AventOfCode2022;
 			sourceTree = "<group>";
@@ -156,6 +163,17 @@
 				58BEE62D295EED9200BFBC22 /* AventOfCode2022Tests.swift */,
 			);
 			path = AventOfCode2022Tests;
+			sourceTree = "<group>";
+		};
+		58C90F5A296B344B00947A08 /* day4 */ = {
+			isa = PBXGroup;
+			children = (
+				58C90F5B296B345400947A08 /* day4.swift */,
+				587ED6B6296C2B3000960B23 /* day4Lib.swift */,
+				587ED6B0296B530000960B23 /* example.txt */,
+				587ED6B1296B530C00960B23 /* input.txt */,
+			);
+			path = day4;
 			sourceTree = "<group>";
 		};
 		8A42A398C24526CFD9E61C5D /* Frameworks */ = {
@@ -313,6 +331,8 @@
 				5844267329573CCF00B77BD7 /* day2.swift in Sources */,
 				58CD152E295DA05700D68429 /* lib.swift in Sources */,
 				588FECFA2967DDE300FE57B0 /* day3.swift in Sources */,
+				587ED6B7296C2B3000960B23 /* day4Lib.swift in Sources */,
+				58C90F5C296B345400947A08 /* day4.swift in Sources */,
 				584FEFAA2964ABB40089C3AC /* day2Lib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
