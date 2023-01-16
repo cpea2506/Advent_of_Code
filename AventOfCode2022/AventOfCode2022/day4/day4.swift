@@ -14,10 +14,12 @@ struct Day4 {
 // MARK: Avent
 
 extension Day4: Avent {
+    typealias Result = UInt
+
     init(data: String) {
         assignmentPairs = data.lines().map {
             let assignments = $0.split(separator: ",").map {
-                let range = $0.split(separator: "-").compactMap { UInt($0) }
+                let range = $0.split(separator: "-").compactMap { Result($0) }
 
                 return Assignment(start: range[0], end: range[1])
             }
@@ -28,11 +30,11 @@ extension Day4: Avent {
 
     // MARK: Internal
 
-    func part1() -> UInt {
+    func part1() -> Result {
         UInt(assignmentPairs.filter { $0.fullyContained }.count)
     }
 
-    func part2() -> UInt {
+    func part2() -> Result {
         UInt(assignmentPairs.filter { $0.pairsOverlapped }.count)
     }
 }

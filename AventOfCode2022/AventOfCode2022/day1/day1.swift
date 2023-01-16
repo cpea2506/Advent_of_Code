@@ -7,7 +7,7 @@
 // MARK: - Day1
 
 struct Day1 {
-    private var calories: [UInt] = []
+    private var calories: [Result] = []
     var day: UInt8 = 1
 }
 
@@ -15,9 +15,10 @@ struct Day1 {
 
 extension Day1: Avent {
     // MARK: Lifecycle
+    typealias Result = UInt32
 
     init(data: String) {
-        var totalElveCalories: UInt = 0
+        var totalElveCalories: Result = 0
 
         // we need the line terminator so we only need one condition
         for calory in data.lines(omittingEmptySubsequences: false) {
@@ -28,18 +29,18 @@ extension Day1: Avent {
             }
 
             // SAFETY: calory always has value and is a number
-            totalElveCalories += UInt(calory)!
+            totalElveCalories += Result(calory)!
         }
     }
 
     // MARK: Internal
 
-    func part1() -> UInt {
+    func part1() -> Result {
         // SAFETY: calories cannot be empty
         calories.max()!
     }
 
-    func part2() -> UInt {
+    func part2() -> Result {
         calories.kNearest(3, by: >).reduce(0, +)
     }
 }

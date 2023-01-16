@@ -9,11 +9,13 @@ import ArgumentParser
 // MARK: - Avent
 
 protocol Avent {
+    associatedtype Result
+
     var day: UInt8 { get }
 
     init(data: String)
-    func part1() -> UInt
-    func part2() -> UInt
+    func part2() -> Result
+    func part1() -> Result
 }
 
 // MARK: - Solution
@@ -21,7 +23,7 @@ protocol Avent {
 struct Solution {
     // MARK: Lifecycle
 
-    init?(for eventType: Avent.Type) {
+    init?(for eventType: any Avent.Type) {
         self.eventType = eventType
     }
 
@@ -42,7 +44,7 @@ struct Solution {
 
     // MARK: Private
 
-    private var eventType: Avent.Type
+    private var eventType: any Avent.Type
 }
 
 // MARK: - AOC2022
@@ -68,6 +70,8 @@ struct AOC2022: ParsableCommand {
                 solution = Solution(for: Day3.self)
             case 4:
                 solution = Solution(for: Day4.self)
+            case 5:
+                solution = solution(for: Day5.self)
             default:
                 print("Info: not yet implemented")
             }

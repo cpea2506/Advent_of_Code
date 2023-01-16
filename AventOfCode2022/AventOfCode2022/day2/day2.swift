@@ -15,6 +15,7 @@ struct Day2 {
 
 extension Day2: Avent {
     // MARK: Lifecycle
+    typealias Result = UInt16
 
     init(data: String) {
         scores = data
@@ -28,7 +29,7 @@ extension Day2: Avent {
 
     // MARK: Internal
 
-    func part1() -> UInt {
+    func part1() -> Result {
         scores.reduce(0) {
             let you = Shape(fromValue: $1.unknown)
             let outcome = $1.opponent.compare(to: you)
@@ -37,7 +38,7 @@ extension Day2: Avent {
         }
     }
 
-    func part2() -> UInt {
+    func part2() -> Result {
         scores.reduce(0) {
             let outcome = Outcome(fromValue: $1.unknown)
             let you = outcome.getShape(against: $1.opponent)

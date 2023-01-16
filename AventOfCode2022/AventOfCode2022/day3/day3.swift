@@ -14,23 +14,25 @@ struct Day3 {
 // MARK: Avent
 
 extension Day3: Avent {
+    typealias Result = UInt16
+
     init(data: String) {
         rucksacks = data.lines()
     }
 
-    func part1() -> UInt {
+    func part1() -> Result {
         rucksacks
             .map {
                 let halfLength = $0.count / 2
                 let itemOccurrence = $0.prefix(halfLength).elementOccurrence
                 let commonItem = $0.suffix(halfLength).first { itemOccurrence[$0] != nil }
 
-                return UInt(commonItem!.priority)
+                return Result(commonItem!.priority)
             }
             .reduce(0, +)
     }
 
-    func part2() -> UInt {
+    func part2() -> Result {
         var commonItems = Set<Character>()
 
         return rucksacks
@@ -45,7 +47,7 @@ extension Day3: Avent {
                 commonItems = commonItems.intersection($1.element.charSet)
 
                 if commonItems.count == 1, let commonItem = commonItems.first {
-                    return $0 + UInt(commonItem.priority)
+                    return $0 + Result(commonItem.priority)
                 }
 
                 return $0

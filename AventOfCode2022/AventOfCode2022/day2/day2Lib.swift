@@ -7,7 +7,7 @@
 
 typealias RPSTuple = (opponent: Shape, unknown: String)
 
-extension UInt {
+extension UInt16 {
     //  See https://math.stackexchange.com/questions/2678895/function-which-creates-the-sequence-1-2-3-1-2-3
     /// Create a cycling sequence from 1 to specified length
     ///
@@ -19,7 +19,7 @@ extension UInt {
 
 // MARK: - Outcome
 
-enum Outcome: UInt {
+enum Outcome: UInt16 {
     case win = 6
     case lost = 0
     case draw = 3
@@ -55,7 +55,7 @@ enum Outcome: UInt {
 
 // MARK: - Shape
 
-enum Shape: UInt, Comparable {
+enum Shape: UInt16, Comparable {
     case rock = 1
     case paper = 2
     case scissors = 3
