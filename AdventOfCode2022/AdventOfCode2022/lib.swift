@@ -22,24 +22,24 @@ extension Double {
 
 /// Get the time to compute solution
 func getTime<T>(for solution: () -> T) -> (T, Double) {
+    let attosecondPerMs = 0.000000000000001
     let clock = ContinuousClock()
     var result: T?
     let time = clock.measure {
         result = solution()
     }
 
-    let timeElapsedInMs = Double(time.components.attoseconds) * 0.000000000000001
+    let timeElapsedInMs = Double(time.components.attoseconds) * attosecondPerMs
 
     // SAFETY: result always has value when clock done measuring
     return (result!, timeElapsedInMs.rounded(to: 3))
 }
 
 /// Read main file corressponding to day
-func readFileInDay(_ day: UInt8, for mainFile: String) throws -> String {
-    // temporary hack to get true file path to this project
-    let url = URL(fileURLWithPath: #filePath)
+func readFile(_ file: String, byDay day: UInt8) throws -> String {
+    let url = URL(fileURLWithPath: #file)
         .deletingLastPathComponent()
-        .appending(component: "day\(day)/\(mainFile)")
+        .appending(component: "day\(day)/\(file)")
 
     return try String(contentsOf: url)
 }

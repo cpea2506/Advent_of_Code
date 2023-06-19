@@ -40,7 +40,6 @@
 		21EB73D352D05335921B8058 /* libPods-AdventOfCode2022.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdventOfCode2022.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C072056EBC9DA6F17CD793 /* Pods-AdventOfCode2022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdventOfCode2022.debug.xcconfig"; path = "Target Support Files/Pods-AdventOfCode2022/Pods-AdventOfCode2022.debug.xcconfig"; sourceTree = "<group>"; };
 		43849138D7E58AB59C702ABC /* Pods-AdventOfCode2022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdventOfCode2022.release.xcconfig"; path = "Target Support Files/Pods-AdventOfCode2022/Pods-AdventOfCode2022.release.xcconfig"; sourceTree = "<group>"; };
-		5832A07929565F0D00A78902 /* AdventOfCode2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = AdventOfCode2022; path = /Users/CPea2506/Tech/Avent_of_Code/AdventOfCode2022/build/Debug/AdventOfCode2022; sourceTree = "<absolute>"; };
 		5832A07C29565F0D00A78902 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5832A08D295664C700A78902 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		5832A08F295664CF00A78902 /* day1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day1.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		5861AF5D29742C4000C924FA /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		5861AF5E29742C4A00C924FA /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		5861AF5F2974643D00C924FA /* day5Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day5Lib.swift; sourceTree = "<group>"; };
+		5872A7002A40712C0006F15F /* AdventOfCode2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode2022; sourceTree = BUILT_PRODUCTS_DIR; };
 		587ED6B0296B530000960B23 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		587ED6B1296B530C00960B23 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		587ED6B6296C2B3000960B23 /* day4Lib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day4Lib.swift; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 				5832A07B29565F0D00A78902 /* AdventOfCode2022 */,
 				2EF36695768AC02B33402EE5 /* Pods */,
 				8A42A398C24526CFD9E61C5D /* Frameworks */,
+				5872A7002A40712C0006F15F /* AdventOfCode2022 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,7 +196,7 @@
 				5832A08429565F3900A78902 /* ArgumentParser */,
 			);
 			productName = AventOfCode2022;
-			productReference = 5832A07929565F0D00A78902 /* AdventOfCode2022 */;
+			productReference = 5872A7002A40712C0006F15F /* AdventOfCode2022 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */

@@ -7,7 +7,7 @@ Language:
 ## Prerequisite:
 
 - Xcode >= 14
-- Swift >= 5.7
+- Swift >= 5.9
 - [Cocoadpods](https://cocoapods.org)
 
 ## Setup:

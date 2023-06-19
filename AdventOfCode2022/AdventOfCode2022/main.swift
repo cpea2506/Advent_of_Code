@@ -58,22 +58,14 @@ struct AOC2022: ParsableCommand {
         let mainFile = example ? "example.txt" : "input.txt"
 
         do {
-            let data = try readFileInDay(day, for: mainFile)
-            var solution: Solution?
-
-            switch day {
-            case 1:
-                solution = Solution(for: Day1.self)
-            case 2:
-                solution = Solution(for: Day2.self)
-            case 3:
-                solution = Solution(for: Day3.self)
-            case 4:
-                solution = Solution(for: Day4.self)
-            case 5:
-                solution = Solution(for: Day5.self)
-            default:
-                print("Info: not yet implemented")
+            let data = try readFile(mainFile, byDay: day)
+            let solution: Solution? = switch day {
+            case 1: Solution(for: Day1.self)
+            case 2: Solution(for: Day2.self)
+            case 3: Solution(for: Day3.self)
+            case 4: Solution(for: Day4.self)
+            case 5: Solution(for: Day5.self)
+            default: nil
             }
 
             if let solution {
