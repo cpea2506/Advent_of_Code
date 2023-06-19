@@ -14,13 +14,13 @@
 		584FEFAA2964ABB40089C3AC /* day2Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FEFA92964ABB40089C3AC /* day2Lib.swift */; };
 		5861AF5C29742C2500C924FA /* day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861AF5B29742C2500C924FA /* day5.swift */; };
 		5861AF602974643D00C924FA /* day5Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861AF5F2974643D00C924FA /* day5Lib.swift */; };
+		5872A7052A409B770006F15F /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 5872A7042A409B770006F15F /* SwiftLintFramework */; };
 		587ED6B7296C2B3000960B23 /* day4Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587ED6B6296C2B3000960B23 /* day4Lib.swift */; };
 		588FECFA2967DDE300FE57B0 /* day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FECF92967DDE300FE57B0 /* day3.swift */; };
 		588FECFC2967DDEE00FE57B0 /* day3Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FECFB2967DDEE00FE57B0 /* day3Lib.swift */; };
 		58BEE626295E914800BFBC22 /* day1Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BEE625295E914800BFBC22 /* day1Lib.swift */; };
 		58C90F5C296B345400947A08 /* day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C90F5B296B345400947A08 /* day4.swift */; };
 		58CD152E295DA05700D68429 /* lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD152D295DA05700D68429 /* lib.swift */; };
-		5AF0C1E7763EAB188041A7FB /* libPods-AdventOfCode2022.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB73D352D05335921B8058 /* libPods-AdventOfCode2022.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,10 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		21EB73D352D05335921B8058 /* libPods-AdventOfCode2022.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdventOfCode2022.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		40C072056EBC9DA6F17CD793 /* Pods-AdventOfCode2022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdventOfCode2022.debug.xcconfig"; path = "Target Support Files/Pods-AdventOfCode2022/Pods-AdventOfCode2022.debug.xcconfig"; sourceTree = "<group>"; };
-		43849138D7E58AB59C702ABC /* Pods-AdventOfCode2022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdventOfCode2022.release.xcconfig"; path = "Target Support Files/Pods-AdventOfCode2022/Pods-AdventOfCode2022.release.xcconfig"; sourceTree = "<group>"; };
-		5832A07C29565F0D00A78902 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5832A07C29565F0D00A78902 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; usesTabs = 0; };
 		5832A08D295664C700A78902 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		5832A08F295664CF00A78902 /* day1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day1.swift; sourceTree = "<group>"; };
 		5844267029571FD500B77BD7 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
@@ -52,7 +49,7 @@
 		5861AF5D29742C4000C924FA /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		5861AF5E29742C4A00C924FA /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		5861AF5F2974643D00C924FA /* day5Lib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day5Lib.swift; sourceTree = "<group>"; };
-		5872A7002A40712C0006F15F /* AdventOfCode2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode2022; sourceTree = BUILT_PRODUCTS_DIR; };
+		5872A70A2A409E760006F15F /* AdventOfCode2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode2022; sourceTree = BUILT_PRODUCTS_DIR; };
 		587ED6B0296B530000960B23 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		587ED6B1296B530C00960B23 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		587ED6B6296C2B3000960B23 /* day4Lib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day4Lib.swift; sourceTree = "<group>"; };
@@ -70,30 +67,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5872A7052A409B770006F15F /* SwiftLintFramework in Frameworks */,
 				5832A08529565F3900A78902 /* ArgumentParser in Frameworks */,
-				5AF0C1E7763EAB188041A7FB /* libPods-AdventOfCode2022.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EF36695768AC02B33402EE5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				40C072056EBC9DA6F17CD793 /* Pods-AdventOfCode2022.debug.xcconfig */,
-				43849138D7E58AB59C702ABC /* Pods-AdventOfCode2022.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		5832A07029565F0D00A78902 = {
 			isa = PBXGroup;
 			children = (
 				5832A07B29565F0D00A78902 /* AdventOfCode2022 */,
-				2EF36695768AC02B33402EE5 /* Pods */,
-				8A42A398C24526CFD9E61C5D /* Frameworks */,
-				5872A7002A40712C0006F15F /* AdventOfCode2022 */,
+				5872A70A2A409E760006F15F /* AdventOfCode2022 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,14 +152,6 @@
 			path = day4;
 			sourceTree = "<group>";
 		};
-		8A42A398C24526CFD9E61C5D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				21EB73D352D05335921B8058 /* libPods-AdventOfCode2022.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,22 +159,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5832A08029565F0D00A78902 /* Build configuration list for PBXNativeTarget "AdventOfCode2022" */;
 			buildPhases = (
-				83F31049C42C588BC97007AB /* [CP] Check Pods Manifest.lock */,
 				5832A07529565F0D00A78902 /* Sources */,
 				5832A07629565F0D00A78902 /* Frameworks */,
 				5832A07729565F0D00A78902 /* Copy Files */,
-				5832A086295660DC00A78902 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5872A7092A409C0C0006F15F /* PBXTargetDependency */,
 			);
 			name = AdventOfCode2022;
 			packageProductDependencies = (
 				5832A08429565F3900A78902 /* ArgumentParser */,
+				5872A7042A409B770006F15F /* SwiftLintFramework */,
 			);
 			productName = AventOfCode2022;
-			productReference = 5872A7002A40712C0006F15F /* AdventOfCode2022 */;
+			productReference = 5872A70A2A409E760006F15F /* AdventOfCode2022 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +185,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					5832A07829565F0D00A78902 = {
 						CreatedOnToolsVersion = 14.1;
@@ -225,6 +203,7 @@
 			mainGroup = 5832A07029565F0D00A78902;
 			packageReferences = (
 				5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				5872A7032A409B770006F15F /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 5832A07029565F0D00A78902;
 			projectDirPath = "";
@@ -234,49 +213,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5832A086295660DC00A78902 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		83F31049C42C588BC97007AB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AdventOfCode2022-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5832A07529565F0D00A78902 /* Sources */ = {
@@ -299,6 +235,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5872A7092A409C0C0006F15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 5872A7082A409C0C0006F15F /* SwiftLintPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5832A07E29565F0D00A78902 /* Debug */ = {
@@ -334,11 +277,14 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -354,6 +300,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -396,12 +344,15 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
 				ENABLE_TESTING_SEARCH_PATHS = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -411,6 +362,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -421,14 +374,17 @@
 		};
 		5832A08129565F0D00A78902 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40C072056EBC9DA6F17CD793 /* Pods-AdventOfCode2022.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R5YS792LYS;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -436,14 +392,17 @@
 		};
 		5832A08229565F0D00A78902 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43849138D7E58AB59C702ABC /* Pods-AdventOfCode2022.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R5YS792LYS;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -481,6 +440,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5872A7032A409B770006F15F /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.52.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -488,6 +455,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5832A08329565F3900A78902 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
+		};
+		5872A7042A409B770006F15F /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5872A7032A409B770006F15F /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
+		};
+		5872A7082A409C0C0006F15F /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5872A7032A409B770006F15F /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

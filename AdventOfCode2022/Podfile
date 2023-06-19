@@ -1,5 +1,0 @@
-platform :macos, '13.0'
-
-target 'AdventOfCode2022' do
-    pod 'SwiftLint'
-end
