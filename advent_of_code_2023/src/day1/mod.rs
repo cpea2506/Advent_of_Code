@@ -1,13 +1,13 @@
-use std::{collections::HashMap, ops::Add};
+use aho_corasick::AhoCorasick;
 
 pub struct Trebuchet {
-    data: Vec<Vec<char>>,
+    data: Vec<String>,
 }
 
 impl crate::Advent for Trebuchet {
     fn new(data: &str) -> Self {
         Self {
-            data: data.lines().map(|l| l.chars().collect()).collect(),
+            data: data.lines().map(String::from).collect(),
         }
     }
 
@@ -20,9 +20,7 @@ impl crate::Advent for Trebuchet {
             .iter()
             .map(|l| {
                 let mut first_digit = None;
-                let mut last_digit = None;
-
-                for c in l {
+                for c in l.chars() {
                     first_digit = c.to_digit(10);
 
                     if first_digit.is_some() {
@@ -30,7 +28,8 @@ impl crate::Advent for Trebuchet {
                     }
                 }
 
-                for c in l.iter().rev() {
+                let mut last_digit = None;
+                for c in l.chars().rev() {
                     last_digit = c.to_digit(10);
 
                     if last_digit.is_some() {
@@ -44,28 +43,20 @@ impl crate::Advent for Trebuchet {
     }
 
     fn part2(&self) -> usize {
-        let digit_str = vec![
-            "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-        ];
+        let ac = AhoCorasick::new(&[
+            "one", "1", "two", "2", "three", "3", "four", "4", "five", "5", "six", "6", "seven",
+            "7", "eight", "8", "nine", "9",
+        ])
+        .unwrap();
 
         self.data
             .iter()
             .map(|l| {
-                let mut digits = vec![];
+                let matched = ac.find_iter(&l).collect::<Vec<_>>();
+                let first = matched.first().unwrap().pattern().as_usize();
+                let last = matched.last().unwrap().pattern().as_usize();
 
-                for (i, &c) in l.iter().enumerate() {
-                    if c.is_digit(10) {
-                        digits.push(c.to_digit(10).unwrap() as usize);
-                    }
-
-                    for (j, &c2) in digit_str.iter().enumerate() {
-                        if l[i..].into_iter().collect::<String>().starts_with(c2) {
-                            digits.push(j + 1);
-                        }
-                    }
-                }
-
-                digits[0] * 10 + digits[digits.len() - 1]
+                (first / 2 + 1) * 10 + (last / 2 + 1)
             })
             .sum()
     }
