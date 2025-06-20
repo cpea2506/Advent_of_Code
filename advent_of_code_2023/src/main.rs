@@ -1,21 +1,22 @@
 use advent2023::get_solution;
-use structopt::StructOpt;
+use clap::Parser;
 
-#[derive(StructOpt)]
+#[derive(Parser, Debug)]
+#[command(version)]
 struct Cli {
-    #[structopt(help = "AOC day", default_value = "1")]
+    #[arg(help = "AOC day", default_value = "1")]
     day: u8,
 
-    #[structopt(short, long, help = "Uses example file provided by AOC")]
+    #[arg(short, long, help = "Uses example file provided by AOC")]
     example: bool,
 
-    #[structopt(short, long, help = "Gets all solutions for all AOC days")]
+    #[arg(short, long, help = "Gets all solutions for all AOC days")]
     all: bool,
 }
 
 fn main() {
     let day_count = 1;
-    let args = Cli::from_args();
+    let args = Cli::parse();
     let main_file = if args.example { "example" } else { "input" };
 
     if args.all {
