@@ -108,24 +108,7 @@ impl crate::Advent for Conundrum {
     }
 }
 
-#[cfg(test)]
-mod test {
-    use super::*;
-    use crate::Advent;
-
-    #[test]
-    fn example_part1() {
-        let data = include_str!("example.txt");
-        let conundrum = Conundrum::new(data);
-
-        assert_eq!(conundrum.part1(), 8);
-    }
-
-    #[test]
-    fn example_part2() {
-        let data = include_str!("example.txt");
-        let conundrum = Conundrum::new(data);
-
-        assert_eq!(conundrum.part2(), 2286);
-    }
-}
+crate::test!(Conundrum {
+    part1("example.txt") => 8,
+    part2("example.txt") => 2286,
+});

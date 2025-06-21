@@ -62,24 +62,7 @@ impl crate::Advent for Trebuchet {
     }
 }
 
-#[cfg(test)]
-mod test {
-    use super::*;
-    use crate::Advent;
-
-    #[test]
-    fn example_part1() {
-        let data = include_str!("example.txt");
-        let trebuchet = Trebuchet::new(data);
-
-        assert_eq!(trebuchet.part1(), 142);
-    }
-
-    #[test]
-    fn example_part2() {
-        let data = include_str!("example2.txt");
-        let trebuchet = Trebuchet::new(data);
-
-        assert_eq!(trebuchet.part2(), 281);
-    }
-}
+crate::test!(Trebuchet {
+    part1("example.txt") => 142,
+    part2("example2.txt") => 281
+});

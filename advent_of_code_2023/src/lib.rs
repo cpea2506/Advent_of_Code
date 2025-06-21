@@ -81,3 +81,28 @@ fn get_time<T>(f: impl FnOnce() -> T) -> (T, Duration) {
 
     (result, time)
 }
+
+#[macro_export]
+macro_rules! test {
+    ($struct:ident { $($method:ident($file:literal) => $expected:expr),+ $(,)? }) => {
+        use pastey::paste;
+
+        paste! {
+            #[cfg(test)]
+            mod [<$struct:lower>] {
+                use super::*;
+                use crate::Advent;
+
+                $(
+                    #[test]
+                    fn [<example_$method>]() {
+                        let data = include_str!($file);
+                        let [<$struct:lower>] = $struct::new(data);
+
+                        assert_eq!([<$struct:lower>].$method(), $expected);
+                    }
+                )+
+            }
+        }
+    };
+}
