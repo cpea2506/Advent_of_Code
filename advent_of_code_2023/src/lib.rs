@@ -89,7 +89,7 @@ macro_rules! test {
 
         paste! {
             #[cfg(test)]
-            mod [<$struct:lower>] {
+            mod test {
                 use super::*;
                 use crate::Advent;
 
