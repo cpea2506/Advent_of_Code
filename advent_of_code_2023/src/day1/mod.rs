@@ -18,8 +18,9 @@ impl crate::Advent for Trebuchet {
     fn part1(&self) -> usize {
         self.data
             .iter()
-            .map(|l| {
+            .filter_map(|l| {
                 let mut first_digit = None;
+
                 for c in l.chars() {
                     first_digit = c.to_digit(10);
 
@@ -37,7 +38,7 @@ impl crate::Advent for Trebuchet {
                     }
                 }
 
-                first_digit.unwrap() as usize * 10 + last_digit.unwrap() as usize
+                Some(first_digit? as usize * 10 + last_digit? as usize)
             })
             .sum()
     }
@@ -51,12 +52,12 @@ impl crate::Advent for Trebuchet {
 
         self.data
             .iter()
-            .map(|l| {
+            .filter_map(|l| {
                 let matched = ac.find_iter(&l).collect::<Vec<_>>();
-                let first = matched.first().unwrap().pattern().as_usize();
-                let last = matched.last().unwrap().pattern().as_usize();
+                let first = matched.first()?.pattern().as_usize();
+                let last = matched.last()?.pattern().as_usize();
 
-                (first / 2 + 1) * 10 + (last / 2 + 1)
+                Some((first / 2 + 1) * 10 + (last / 2 + 1))
             })
             .sum()
     }
