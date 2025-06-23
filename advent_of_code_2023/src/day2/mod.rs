@@ -18,9 +18,9 @@ impl FromStr for Color {
 
     fn from_str(s: &str) -> Result<Self, ()> {
         match s {
-            "red" => Ok(Color::Red),
-            "green" => Ok(Color::Green),
-            "blue" => Ok(Color::Blue),
+            "red" => Ok(Self::Red),
+            "green" => Ok(Self::Green),
+            "blue" => Ok(Self::Blue),
             _ => Err(()),
         }
     }
@@ -59,7 +59,7 @@ impl FromStr for Game {
             }
         }
 
-        Ok(Game { id, subset })
+        Ok(Self { id, subset })
     }
 }
 
@@ -80,15 +80,15 @@ impl Game {
 }
 
 pub struct Conundrum {
-    data: Vec<Game>,
+    games: Vec<Game>,
 }
 
 impl crate::Advent for Conundrum {
     fn new(data: &str) -> Self {
         Self {
-            data: data
+            games: data
                 .lines()
-                .filter_map(|line| line.parse::<Game>().ok())
+                .filter_map(|line| line.parse().ok())
                 .collect::<Vec<Game>>(),
         }
     }
@@ -98,14 +98,14 @@ impl crate::Advent for Conundrum {
     }
 
     fn part1(&self) -> usize {
-        self.data
+        self.games
             .iter()
             .filter_map(|g| g.is_valid().then_some(g.id as usize))
             .sum()
     }
 
     fn part2(&self) -> usize {
-        self.data.iter().map(|g| g.power() as usize).sum()
+        self.games.iter().map(|g| g.power() as usize).sum()
     }
 }
 
