@@ -1,5 +1,6 @@
 mod day1;
 mod day2;
+mod day3;
 
 use anyhow::Context;
 use humantime::format_duration;
@@ -68,6 +69,7 @@ pub fn get_solution(main_file: &str, day: u8) {
     let solution = match day {
         1 => Solution::new::<day1::Trebuchet>(content),
         2 => Solution::new::<day2::Conundrum>(content),
+        3 => Solution::new::<day3::GearRatios>(content),
         _ => unimplemented!("No solution found!"),
     };
 
