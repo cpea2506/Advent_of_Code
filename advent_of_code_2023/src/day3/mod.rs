@@ -10,9 +10,13 @@ impl Number {
         let rows = grid.len();
         let cols = grid[0].len();
 
-        for r in self.row.saturating_sub(1)..=(self.row + 1).min(rows - 1) {
-            for c in self.col.0.saturating_sub(1)..=(self.col.1 + 1).min(cols - 1) {
-                let ch = grid[r].as_bytes()[c] as char;
+        for line in grid
+            .iter()
+            .take((self.row + 1).min(rows - 1) + 1)
+            .skip(self.row.saturating_sub(1))
+        {
+            for col in self.col.0.saturating_sub(1)..=(self.col.1 + 1).min(cols - 1) {
+                let ch = line.as_bytes()[col] as char;
 
                 if !ch.is_ascii_digit() && ch != '.' {
                     return true;
@@ -20,7 +24,7 @@ impl Number {
             }
         }
 
-        return false;
+        false
     }
 
     fn touches(&self, row: usize, col: usize) -> bool {
@@ -44,7 +48,6 @@ pub struct GearRatios {
 impl crate::Advent for GearRatios {
     fn new(data: &str) -> Self {
         let grid = data.lines().map(str::to_string).collect::<Grid>();
-
         let mut numbers = vec![];
 
         for (row, line) in grid.iter().enumerate() {
@@ -84,8 +87,7 @@ impl crate::Advent for GearRatios {
     fn part1(&self) -> usize {
         self.numbers
             .iter()
-            .filter(|n| n.is_part_number(&self.grid))
-            .map(|n| n.value as usize)
+            .filter_map(|n| n.is_part_number(&self.grid).then_some(n.value as usize))
             .sum()
     }
 

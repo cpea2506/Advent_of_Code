@@ -73,7 +73,8 @@ impl Game {
     fn power(&self) -> u16 {
         self.subset
             .values()
-            .filter_map(|count| count.iter().max().and_then(|&x| Some(x as u16)))
+            .filter_map(|count| count.iter().max())
+            .map(|&x| x as u16)
             .product()
     }
 }

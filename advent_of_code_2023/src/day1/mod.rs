@@ -44,7 +44,7 @@ impl crate::Advent for Trebuchet {
     }
 
     fn part2(&self) -> usize {
-        let ac = AhoCorasick::new(&[
+        let ac = AhoCorasick::new([
             "one", "1", "two", "2", "three", "3", "four", "4", "five", "5", "six", "6", "seven",
             "7", "eight", "8", "nine", "9",
         ])
@@ -53,7 +53,7 @@ impl crate::Advent for Trebuchet {
         self.data
             .iter()
             .filter_map(|l| {
-                let matched = ac.find_iter(&l).collect::<Vec<_>>();
+                let matched = ac.find_iter(l).collect::<Vec<_>>();
                 let first = matched.first()?.pattern().as_usize();
                 let last = matched.last()?.pattern().as_usize();
 

@@ -93,7 +93,7 @@ macro_rules! test {
             #[cfg(test)]
             mod test {
                 use super::*;
-                use crate::Advent;
+                use $crate::Advent;
 
                 $(
                     #[test]
