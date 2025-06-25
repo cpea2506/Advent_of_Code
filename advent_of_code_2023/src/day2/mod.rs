@@ -1,10 +1,7 @@
-use lazy_static::lazy_static;
-use std::{collections::HashMap, str::FromStr};
+use std::{collections::HashMap, str::FromStr, sync::LazyLock};
 
-lazy_static! {
-    static ref CUBE_LIMIT: HashMap<Color, u8> =
-        HashMap::from([(Color::Red, 12), (Color::Green, 13), (Color::Blue, 14)]);
-}
+static CUBE_LIMIT: LazyLock<HashMap<Color, u8>> =
+    LazyLock::new(|| HashMap::from([(Color::Red, 12), (Color::Green, 13), (Color::Blue, 14)]));
 
 #[derive(Debug, PartialEq, Eq, Hash)]
 enum Color {
